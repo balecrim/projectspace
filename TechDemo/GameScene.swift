@@ -14,16 +14,6 @@ import SpriteKit
 class GameScene: IsometricGameScene {
 
     override func didMove(to view: SKView) {
-        
-        tiles = [
-            [8, 1, 1, 1, 1, 2],
-            [7 ,0, 0, 0, 0, 0],
-            [7 ,0, 0, 0, 0, 0],
-            [7 ,0, 0, 0, 0, 0],
-            [7 ,0, 0, 0, 0, 0],
-            [6, 0, 0, 0, 0, 0]
-        ]
-        
         super.didMove(to: view)
         
     }

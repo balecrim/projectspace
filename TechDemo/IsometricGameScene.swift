@@ -8,22 +8,22 @@ import SpriteKit
 
 class IsometricGameScene: SKScene{
 
-    var is2DViewHidden: Bool = false
-    var isIsometricViewHidden: Bool = false
-
-    let view2D: SKSpriteNode
     let viewIso: SKSpriteNode
-
     let tileSize = (width:32, height:32)
 
-    var tiles = [[1]]
+    var layeredTiles: [[[SKTileNode]]] = [
+        
+            [[SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
+             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
+             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground]]
+    
+        ]
 
 
     // MARK: Initializers
 
     override init(size: CGSize) {
 
-        view2D = SKSpriteNode()
         viewIso = SKSpriteNode()
 
         super.init(size: size)
@@ -32,7 +32,6 @@ class IsometricGameScene: SKScene{
 
     required init?(coder aDecoder: NSCoder) {
 
-        view2D = SKSpriteNode()
         viewIso = SKSpriteNode()
 
         super.init(coder: aDecoder)
@@ -45,156 +44,48 @@ class IsometricGameScene: SKScene{
 
         let deviceScale = self.size.width/667
 
-        if !is2DViewHidden{
-
-//            view2D.xScale = deviceScale
-//            view2D.yScale = deviceScale
-            
-            addChild(view2D)
-            build2DScene()
-
-            view2D.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            
-            if !isIsometricViewHidden{
-                view2D.position = CGPoint(x: -self.size.width*0.45,
-                                          y: self.size.height*0.17)
-            } else {
-//                view2D.position = CGPoint(x: 0,
-//                                          y: 0)
-
-                view2D.position = CGPoint(x: -self.size.width*0.45,
-                                          y: self.size.height*0.17)
-
-            }
-
-            
-        }
-
-        if !isIsometricViewHidden{
-
-            if !isIsometricViewHidden{
-                viewIso.position = CGPoint(x: self.size.width*0.12,
-                                           y: self.size.height*0.12)
-            } else{
-                viewIso.position = CGPoint(x: 0,
-                                           y: self.size.height*0.12)
-            }
-
             viewIso.xScale = deviceScale
             viewIso.yScale = deviceScale
             addChild(viewIso)
-
+            
             buildIsometricScene()
+            
+            viewIso.position = CGPoint(x: -self.size.width*0.05,
+                                       y: self.size.height*0.15)
 
-        }
+
         
-        place2dTile(image: "ground", atPosition: CGPoint.zero)
-
-    }
-
-    // MARK: to-Isometric and to-2D point conversions.
-
-    /// This function is used to convert a 2D point into an isometric one.
-    ///
-    /// - Parameter point: The point to be converted to an isometric coordinate.
-    /// - Returns: The point in the isometric grid.
-    
-    func convertToIsometricPoint(point: CGPoint) -> CGPoint {
-
-        //invert y pre conversion
-        var point = point * CGPoint(x:1, y:-1)
-
-        //convert using algorithm
-        point = CGPoint(x:(point.x - point.y), y: ((point.x + point.y) / 2))
-
-        //invert y post conversion
-        point = point * CGPoint(x:1, y:-1)
-
-        return point
-
-    }
-
-    /// This function is used to convert an isometric point into a 2D one.
-    ///
-    /// - Parameter point: The point to be converted to a 2D coordinate.
-    /// - Returns: The point in the 2D grid.
-    
-    func convertTo2dPoint(point: CGPoint) -> CGPoint {
-
-        //invert y pre conversion
-        var point = point * CGPoint(x:1, y:-1)
-
-        //convert using algorithm
-        point = CGPoint(x:((2 * point.y + point.x) / 2), y: ((2 * point.y - point.x) / 2))
-
-        //invert y post conversion
-        point = point * CGPoint(x:1, y:-1)
-
-        return point
-
     }
 
     // MARK: Isometric tile placement
 
-    func placeIsometricTile(image: String, atPosition point: CGPoint) {
+    func placeIsometricTile(tile: SKTileNode, atPosition position: CGPoint) {
 
-        let tileSprite = SKSpriteNode(imageNamed: image)
+                let point = CGPoint(x: (position.x * CGFloat(tileSize.width)),
+                            y: -(position.y * CGFloat(tileSize.height))).isometric
 
-        tileSprite.position = point
-        tileSprite.anchorPoint = CGPoint(x:0, y:0)
+        tile.position = point
+        tile.anchorPoint = CGPoint(x:0, y:0)
 
-        viewIso.addChild(tileSprite)
+        viewIso.addChild(tile)
     }
 
 
     func buildIsometricScene() {
-
-        for (rowNumber, row) in tiles.enumerated(){
-            for (columnNumber, tileValue) in row.enumerated(){
-                
-                let tile = Tile(rawValue: tileValue)!
-                
-                let point = convertToIsometricPoint(point: CGPoint(x: (columnNumber * tileSize.width),
-                                                                   y: -(rowNumber * tileSize.height)))
-                
-                placeIsometricTile(image: ("iso_"+tile.image), atPosition: point)
-
-            
+        
+        for (layerNumber, layer) in layeredTiles.enumerated(){
+            for (rowNumber, row) in layer.enumerated(){
+                for (columnNumber, tile) in row.enumerated(){
+                    
+                    placeIsometricTile(tile: tile,
+                                       atPosition: CGPoint(x: columnNumber, y: rowNumber))
+                    
+                    
+                }
             }
         }
         
     }
-
-    // MARK: 2D tile placement
-
-    func place2dTile(image: String, atPosition point: CGPoint) {
-
-        let tileSprite = SKSpriteNode(imageNamed: image)
-
-        tileSprite.position = point
-        tileSprite.anchorPoint = CGPoint(x:0, y:0)
-
-        view2D.addChild(tileSprite)
-
-    }
-
-    func build2DScene() {
-
-        for (rowNumber, row) in tiles.enumerated(){
-            for (columnNumber, tileValue) in row.enumerated(){
-                
-                let tile = Tile(rawValue: tileValue)!
-                let point = CGPoint(x: (columnNumber * tileSize.width),
-                                    y: -(rowNumber * tileSize.height))
-                
-                place2dTile(image: tile.image, atPosition: point)
-
-                
-            }
-        }
-
-    }
-
 
 
 }

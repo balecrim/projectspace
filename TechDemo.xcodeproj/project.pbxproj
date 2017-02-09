@@ -17,8 +17,9 @@
 		A3E4EDCF1E48D9C300DBE129 /* TechDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDCE1E48D9C300DBE129 /* TechDemoTests.swift */; };
 		A3E4EDDA1E48D9C300DBE129 /* TechDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDD91E48D9C300DBE129 /* TechDemoUITests.swift */; };
 		A3E4EDEA1E48DF9200DBE129 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDE91E48DF9200DBE129 /* sprites.atlas */; };
+		A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */; };
 		F92CE5682E692273D446E8CF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */; };
-		F92CE87621BAD461817DEB9F /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE86F938CC55AA24CF722 /* Tiles.swift */; };
+		F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */; };
 		F92CE926B872ED1E27530233 /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */; };
 		F92CE9BBF515A71337D307AC /* IsometricGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */; };
 		F92CEC96EF4A6848BB35BC35 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F92CEF9EBE60447C7234F968 /* Actions.sks */; };
@@ -58,8 +59,9 @@
 		A3E4EDD91E48D9C300DBE129 /* TechDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechDemoUITests.swift; sourceTree = "<group>"; };
 		A3E4EDDB1E48D9C300DBE129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E4EDE91E48DF9200DBE129 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTileNode.swift; sourceTree = "<group>"; };
 		F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsometricGameScene.swift; sourceTree = "<group>"; };
-		F92CE86F938CC55AA24CF722 /* Tiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
+		F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+IsometricConversion.swift"; sourceTree = "<group>"; };
 		F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		F92CEF9EBE60447C7234F968 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
@@ -124,7 +126,8 @@
 				A3E4EDE91E48DF9200DBE129 /* sprites.atlas */,
 				A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */,
 				A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */,
-				F92CE86F938CC55AA24CF722 /* Tiles.swift */,
+				F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */,
+				A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */,
 			);
 			path = TechDemo;
 			sourceTree = "<group>";
@@ -303,7 +306,8 @@
 				A3E4EDBF1E48D9C200DBE129 /* GameViewController.swift in Sources */,
 				A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */,
 				F92CE9BBF515A71337D307AC /* IsometricGameScene.swift in Sources */,
-				F92CE87621BAD461817DEB9F /* Tiles.swift in Sources */,
+				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
+				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
