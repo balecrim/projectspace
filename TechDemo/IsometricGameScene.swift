@@ -8,36 +8,25 @@ import SpriteKit
 
 class IsometricGameScene: SKScene{
 
-    let viewIso: SKSpriteNode
+    let isometricView: SKSpriteNode
     let tileSize = (width:32, height:32)
 
-    var layeredTiles: [[[SKTileNode]]] = [
+    fileprivate var tileStorage: [[[SKTileNode]]] = []
+    
+    var tileSet: [[[SKTileNode]]]{
+        get{ return tileStorage }
+        set{
+            let adjustedTileSet = setHeights(on: newValue)
+            tileStorage = adjustedTileSet
+        }
         
-            [[SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground],
-             [SKTileNode.ground, SKTileNode.ground, SKTileNode.ground, SKTileNode.ground]],
-            [[SKTileNode.wall, SKTileNode.wall, SKTileNode.wall, SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall],
-             [SKTileNode.wall]]
-            
-        ]
-
+    }
 
     // MARK: Initializers
 
     override init(size: CGSize) {
 
-        viewIso = SKSpriteNode()
+        isometricView = SKSpriteNode()
 
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -45,7 +34,7 @@ class IsometricGameScene: SKScene{
 
     required init?(coder aDecoder: NSCoder) {
 
-        viewIso = SKSpriteNode()
+        isometricView = SKSpriteNode()
 
         super.init(coder: aDecoder)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
@@ -55,23 +44,22 @@ class IsometricGameScene: SKScene{
 
         super.didMove(to: view)
 
-//        let deviceScale = self.size.width/667
-        
-//            viewIso.xScale = deviceScale
-//            viewIso.yScale = deviceScale
-            addChild(viewIso)
-            
-            buildIsometricScene()
-        
-            viewIso.position = CGPoint(x: 0,
-                                       y: 0)
-
-        setheights()
-        printHeights()
+        addChild(isometricView)
+        buildIsometricScene(for: tileStorage)
+    
+        isometricView.position = CGPoint(x: 0, y: 0)
     }
 
     // MARK: Isometric tile placement
 
+    /// Calculates position for tile based on its position and layer, then adds it to the
+    /// isometricView node.
+    ///
+    /// - Parameters:
+    ///   - tile: the tile which should be added.
+    ///   - position: the position which it should be placed at.
+    ///   - onLayer: the layer which it should be placed on.
+    
     func placeIsometricTile(tile: SKTileNode, atPosition position: CGPoint, onLayer: Int) {
 
         //calculating placement point for the tile, then beating it into our isometric grid.
@@ -101,42 +89,36 @@ class IsometricGameScene: SKScene{
         tile.position = point
         tile.anchorPoint = CGPoint(x:0, y:0)
 
-        viewIso.addChild(tile)
+        isometricView.addChild(tile)
     }
 
-    func setheights(){
-        for (layerNumber, layer) in layeredTiles.enumerated(){
+    /// Sets the correct zPosition for all tiles on a tileSet, 
+    /// leaving the scene ready for occlusion support.
+    ///
+    /// - Parameter tileSet: the tileSet to perform height adjustment on.
+    /// - Returns: A copy of the tileSet with adjusted heights.
+    
+    func setHeights(on tileSet: [[[SKTileNode]]]) -> [[[SKTileNode]]]{
+        for (layerNumber, layer) in tileSet.enumerated(){
             for (rowNumber, row) in layer.enumerated(){
                 for (_, tile) in row.enumerated(){
                     
-                    tile.zPosition = CGFloat(rowNumber + (layerNumber))
+                    tile.zPosition = CGFloat(rowNumber + layerNumber)
                     
                 }
             }
         }
 
-        
+        return tileSet
     }
     
-    func printHeights(){
-        for (_, layer) in layeredTiles.enumerated(){
-            for (rowNumber, row) in layer.enumerated(){
-                print("\(rowNumber): [", terminator: "")
-                for (_, tile) in row.enumerated(){
-                    
-                    print("\(tile.zPosition), \(tile.size);", terminator: " ")
-                    
-                }
-                print("]", terminator: "\n")
-            }
-        }
-    }
-
+    /// Renders an isometric view based on a tileSet.
+    ///
+    /// - Parameter tileSet: the tileSet to render.
     
-    
-    func buildIsometricScene() {
+    func buildIsometricScene(for tileSet: [[[SKTileNode]]]) {
         
-        for (layerNumber, layer) in layeredTiles.enumerated(){
+        for (layerNumber, layer) in tileSet.enumerated(){
             for (rowNumber, row) in layer.enumerated(){
                 for (columnNumber, tile) in row.enumerated(){
                     
@@ -148,7 +130,6 @@ class IsometricGameScene: SKScene{
                 }
             }
         }
-        
     }
 
 
