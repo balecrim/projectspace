@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9e1833-c195-4895-8a86-c0f5f33d8ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/iso_ground.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/iso_ground@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/CGPoint+IsometricConversion.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/Contents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Tiles.swift" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocube.imageset/Tile1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isoslab.imageset/Room.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocube.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isoslab.imageset/Contents.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/sprites.atlas/iso_ground.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/TechDemo/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/GameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/GameScene.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKTileNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,12 +42,9 @@
           <file leaf-file-name="GameScene.swift" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/TechDemo/GameScene.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-                  <folding>
-                    <marker date="1486667613000" expanded="true" signature="237:335" ph="{...}" />
-                    <marker date="1486667613000" expanded="true" signature="283:331" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="300">
+                  <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -75,8 +69,8 @@
           <file leaf-file-name="IsometricGameScene.swift" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                <state relative-caret-position="285">
+                  <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
                   <folding>
                     <element signature="e#110#127#0" expanded="true" />
                   </folding>
@@ -99,11 +93,9 @@
           <file leaf-file-name="SKTileNode.swift" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/TechDemo/SKTileNode.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-                  <folding>
-                    <marker date="1486667547000" expanded="true" signature="213:1799" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="885">
+                  <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -119,10 +111,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TechDemo/CGPoint+IsometricConversion.swift" />
-        <option value="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
         <option value="$PROJECT_DIR$/TechDemo/Tiles.swift" />
-        <option value="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
         <option value="$PROJECT_DIR$/TechDemo/GameScene.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
       </list>
     </option>
   </component>
@@ -256,12 +248,12 @@
       <updated>1486401398461</updated>
       <workItem from="1486401401176" duration="441000" />
       <workItem from="1486577156624" duration="6713000" />
-      <workItem from="1486604030580" duration="1701000" />
+      <workItem from="1486604030580" duration="4557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8855000" />
+    <option name="totallyTimeSpent" value="11711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-631" y="-1418" width="2560" height="1418" extended-state="6" />
@@ -272,6 +264,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -282,7 +275,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -334,10 +326,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1486667613000" expanded="true" signature="237:335" ph="{...}" />
-            <marker date="1486667613000" expanded="true" signature="283:331" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -348,6 +337,14 @@
           <folding>
             <element signature="e#146#163#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TechDemo/Tiles.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -363,8 +360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
             <element signature="e#110#127#0" expanded="true" />
           </folding>
@@ -373,30 +370,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TechDemo/SKTileNode.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding>
-            <marker date="1486667547000" expanded="true" signature="213:1799" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TechDemo/Tiles.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="885">
+          <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TechDemo/GameScene.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <marker date="1486667613000" expanded="true" signature="237:335" ph="{...}" />
-            <marker date="1486667613000" expanded="true" signature="283:331" ph="{...}" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
