@@ -18,7 +18,10 @@
 		A3E4EDDA1E48D9C300DBE129 /* TechDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDD91E48D9C300DBE129 /* TechDemoUITests.swift */; };
 		A3E4EDEA1E48DF9200DBE129 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDE91E48DF9200DBE129 /* sprites.atlas */; };
 		A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */; };
+		A3EB55E21E53682B0047792E /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB55E11E53682B0047792E /* Collections.swift */; };
+		F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE1B6D716160C0E15C0CB /* SKTileableNode.swift */; };
 		F92CE5682E692273D446E8CF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */; };
+		F92CE7F1FA23CA89C02E01B8 /* SKCharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE779EB56CD46C358EE40 /* SKCharacterNode.swift */; };
 		F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */; };
 		F92CE926B872ED1E27530233 /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */; };
 		F92CE9BBF515A71337D307AC /* IsometricGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */; };
@@ -60,11 +63,14 @@
 		A3E4EDDB1E48D9C300DBE129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E4EDE91E48DF9200DBE129 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTileNode.swift; sourceTree = "<group>"; };
+		A3EB55E11E53682B0047792E /* Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		F92CE1B6D716160C0E15C0CB /* SKTileableNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTileableNode.swift; sourceTree = "<group>"; };
 		F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsometricGameScene.swift; sourceTree = "<group>"; };
+		F92CE779EB56CD46C358EE40 /* SKCharacterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCharacterNode.swift; sourceTree = "<group>"; };
 		F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+IsometricConversion.swift"; sourceTree = "<group>"; };
-		F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		F92CEF9EBE60447C7234F968 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
+		F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = "SpriteKit-related assets/GameScene.sks"; sourceTree = "<group>"; };
+		F92CEF9EBE60447C7234F968 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Actions.sks; path = "SpriteKit-related assets/Actions.sks"; sourceTree = "<group>"; };
+		F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyTileSet.sks; path = "SpriteKit-related assets/MyTileSet.sks"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,19 +121,14 @@
 		A3E4EDB31E48D9C200DBE129 /* TechDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */,
 				A3E4EDC51E48D9C200DBE129 /* Info.plist */,
-				F92CE1CE7CF9A76D6675FB09 /* SpriteKit-related assets */,
-				A3E4EDC01E48D9C200DBE129 /* Main.storyboard */,
+				A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */,
 				A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */,
-				A3E4EDBE1E48D9C200DBE129 /* GameViewController.swift */,
-				A39564E31E48E68E00E8795D /* Operators.swift */,
 				F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */,
-				A3E4EDE91E48DF9200DBE129 /* sprites.atlas */,
-				A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */,
-				A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */,
-				F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */,
-				A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */,
+				A3E4EDBE1E48D9C200DBE129 /* GameViewController.swift */,
+				A3EB55E31E53688C0047792E /* Tile Support */,
+				A3EB55E01E53681E0047792E /* Extensions */,
+				A3EB55E41E5368B70047792E /* Resources */,
 			);
 			path = TechDemo;
 			sourceTree = "<group>";
@@ -150,14 +151,38 @@
 			path = TechDemoUITests;
 			sourceTree = "<group>";
 		};
-		F92CE1CE7CF9A76D6675FB09 /* SpriteKit-related assets */ = {
+		A3EB55E01E53681E0047792E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A39564E31E48E68E00E8795D /* Operators.swift */,
+				F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */,
+				A3EB55E11E53682B0047792E /* Collections.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A3EB55E31E53688C0047792E /* Tile Support */ = {
+			isa = PBXGroup;
+			children = (
+				A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */,
+				F92CE1B6D716160C0E15C0CB /* SKTileableNode.swift */,
+				F92CE779EB56CD46C358EE40 /* SKCharacterNode.swift */,
+			);
+			name = "Tile Support";
+			sourceTree = "<group>";
+		};
+		A3EB55E41E5368B70047792E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				F92CEF9EBE60447C7234F968 /* Actions.sks */,
 				F92CEDBFCDFB9AE54B1360F1 /* GameScene.sks */,
 				F92CEFC6BD1DD8426F0E4942 /* MyTileSet.sks */,
+				A3E4EDC01E48D9C200DBE129 /* Main.storyboard */,
+				A3E4EDE91E48DF9200DBE129 /* sprites.atlas */,
+				A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */,
+				A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */,
 			);
-			path = "SpriteKit-related assets";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +333,9 @@
 				F92CE9BBF515A71337D307AC /* IsometricGameScene.swift in Sources */,
 				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
 				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
+				F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */,
+				F92CE7F1FA23CA89C02E01B8 /* SKCharacterNode.swift in Sources */,
+				A3EB55E21E53682B0047792E /* Collections.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

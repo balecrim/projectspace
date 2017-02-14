@@ -12,8 +12,12 @@ import GameplayKit
 import SpriteKit
 
 class GameScene: IsometricGameScene {
-
+    
+    var character = SKCharacterNode?
+    
     override func didMove(to view: SKView) {
+        
+        
         
         tileSet = [[[.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],

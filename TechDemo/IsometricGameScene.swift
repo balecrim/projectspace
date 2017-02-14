@@ -11,9 +11,9 @@ class IsometricGameScene: SKScene{
     let isometricView: SKSpriteNode
     let tileSize = (width:32, height:32)
 
-    fileprivate var tileStorage: [[[SKTileNode]]] = []
+    fileprivate var tileStorage: [[[SKTileableNode]]] = []
     
-    var tileSet: [[[SKTileNode]]]{
+    var tileSet: [[[SKTileableNode]]]{
         get{ return tileStorage }
         set{
             let adjustedTileSet = setHeights(on: newValue)
@@ -60,7 +60,7 @@ class IsometricGameScene: SKScene{
     ///   - position: the position which it should be placed at.
     ///   - onLayer: the layer which it should be placed on.
     
-    func placeIsometricTile(tile: SKTileNode, atPosition position: CGPoint, onLayer: Int) {
+    func placeIsometricTile(tile: SKTileableNode, atPosition position: CGPoint, onLayer: Int) {
 
         //calculating placement point for the tile, then beating it into our isometric grid.
         var point: CGPoint
@@ -88,10 +88,10 @@ class IsometricGameScene: SKScene{
         //setting up tile
         tile.position = point
         tile.anchorPoint = CGPoint(x:0, y:0)
-        tile.name = "(\(onLayer), \(position.x), \(position.y))"
+        tile.gridPosition = (x: Int(position.x), y: Int(position.y), z: onLayer)
 
         //check if there's an old tile at that position and remove it...
-        if let oldTile = isometricView.childNode(withName: tile.name!){
+        if let oldTile = tileSet[safe: onLayer]?[safe: Int(position.y)]?[safe: Int(position.x)]{
             oldTile.removeFromParent()
         }
         
@@ -104,7 +104,7 @@ class IsometricGameScene: SKScene{
     /// - Parameter tileSet: the tileSet to perform height adjustment on.
     /// - Returns: A copy of the tileSet with adjusted heights.
     
-    func setHeights(on tileSet: [[[SKTileNode]]]) -> [[[SKTileNode]]]{
+    func setHeights(on tileSet: [[[SKTileableNode]]]) -> [[[SKTileableNode]]]{
         for (layerNumber, layer) in tileSet.enumerated(){
             for (rowNumber, row) in layer.enumerated(){
                 for (_, tile) in row.enumerated(){
@@ -122,7 +122,7 @@ class IsometricGameScene: SKScene{
     ///
     /// - Parameter tileSet: the tileSet to render.
     
-    func buildIsometricScene(for tileSet: [[[SKTileNode]]]) {
+    func buildIsometricScene(for tileSet: [[[SKTileableNode]]]) {
         
         for (layerNumber, layer) in tileSet.enumerated(){
             for (rowNumber, row) in layer.enumerated(){
@@ -137,4 +137,40 @@ class IsometricGameScene: SKScene{
             }
         }
     }
+    
+    func getTileForPosition(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
+        return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
+    }
+    
+    //EXPERIMENTAL VERSION, use with EXTREME caution.
+    func moveTile(tile: SKTileableNode, on direction: MovementDirection){
+        
+        if let destination = getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
+            if let destFloor = getTileForPosition(at: destination.underneathPosition()) as? SKTileNode{
+                if (destination.isAccessible && destFloor.isAccessible){
+                    
+                    //storing positions
+                    let originalPosition = tile.gridPosition
+                    let destinationPosition = destination.gridPosition
+                    
+                    //moving tile in the scene
+                    tile.position = destination.position
+                    
+                    //removing old tile from the scene
+                    destination.removeFromParent()
+                    
+                    //reorganizing the matrix
+                    tileSet[destinationPosition.z][destinationPosition.y][destinationPosition.y] = tile
+                    tileSet[originalPosition.z][originalPosition.y][originalPosition.y] = .air
+                    
+                    //adding air back into the scene
+                    isometricView.addChild(tileSet[originalPosition.z][originalPosition.y][originalPosition.y])
+                    
+                }
+        
+            }
+        }
+    }
 }
+
+

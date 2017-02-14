@@ -9,33 +9,23 @@
 import Foundation
 import SpriteKit
 
-class SKTileNode: SKSpriteNode{
+class SKTileNode: SKTileableNode{
 
     static var baseSize: CGSize = CGSize(width: 64, height: 64)
     
-    enum TileState{
+    enum TileState {
         case inactive
         case interacting
         case objectiveFulfilled
     }
-    
-    enum TileHeight{
-        case halfHeight
-        case fullHeight
-        case doubleHeight
-    }
-
 
     var isAccessible: Bool = true
     var isInteractive: Bool = false
     var currentState: TileState = .inactive
 
     var depth: Int = 0
-    let height: TileHeight
 
-    
     required init?(coder aDecoder: NSCoder) {
-        height = .fullHeight
         super.init(coder: aDecoder)
     }
     
@@ -45,14 +35,14 @@ class SKTileNode: SKSpriteNode{
          interactive: Bool = false,
          tileHeight: TileHeight = .fullHeight){
 
-        height = tileHeight
         depth = tileDepth
         isAccessible = accessible
         isInteractive = interactive
 
         super.init(texture: SKTexture.init(imageNamed: spriteName),
                    color: UIColor.red,
-                   size: SKTexture.init(imageNamed: spriteName).size())
+                   size: SKTexture.init(imageNamed: spriteName).size(),
+                   height: tileHeight)
         
     }
     
@@ -65,12 +55,11 @@ class SKTileNode: SKSpriteNode{
         depth = tileDepth
         isAccessible = accessible
         isInteractive = interactive
-        height = tileHeight
-
         
         super.init(texture: spriteTexture,
                    color: UIColor.red,
-                   size: spriteTexture.size())
+                   size: spriteTexture.size(),
+                   height: tileHeight)
         
     }
     
@@ -83,18 +72,17 @@ class SKTileNode: SKSpriteNode{
         depth = tileDepth
         isAccessible = accessible
         isInteractive = interactive
-        height = tileHeight
-
         
         super.init(texture: nil,
                    color: color,
-                   size: SKTileNode.baseSize)
+                   size: SKTileNode.baseSize,
+                   height: tileHeight)
         
     }
     
 }
 
-extension SKTileNode{
+extension SKTileableNode{
     
     static var ground: SKTileNode{
         get{
@@ -149,4 +137,3 @@ extension SKTileNode{
     }
 
 }
-
