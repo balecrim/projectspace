@@ -128,9 +128,19 @@ extension SKTileNode{
 
 
     
-    static var redTile: SKTileNode{
+    static var redCube: SKTileNode{
         get{
-            return SKTileNode.init(color: UIColor.red,
+            return SKTileNode.init(spriteName: "redCube",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   interactive: false,
+                                   tileHeight: .fullHeight)
+        }
+    }
+    
+    static var air: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "transparent",
                                    tileDepth: 0,
                                    accessible: true,
                                    interactive: false,

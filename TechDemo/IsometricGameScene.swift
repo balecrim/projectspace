@@ -88,7 +88,13 @@ class IsometricGameScene: SKScene{
         //setting up tile
         tile.position = point
         tile.anchorPoint = CGPoint(x:0, y:0)
+        tile.name = "(\(onLayer), \(position.x), \(position.y))"
 
+        //check if there's an old tile at that position and remove it...
+        if let oldTile = isometricView.childNode(withName: tile.name!){
+            oldTile.removeFromParent()
+        }
+        
         isometricView.addChild(tile)
     }
 
@@ -131,6 +137,4 @@ class IsometricGameScene: SKScene{
             }
         }
     }
-
-
 }
