@@ -41,7 +41,7 @@ class SKTileNode: SKTileableNode{
 
         super.init(texture: SKTexture.init(imageNamed: spriteName),
                    color: UIColor.red,
-                   size: SKTexture.init(imageNamed: spriteName).size(),
+                   size: SKTileNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
         
     }
@@ -58,7 +58,7 @@ class SKTileNode: SKTileableNode{
         
         super.init(texture: spriteTexture,
                    color: UIColor.red,
-                   size: spriteTexture.size(),
+                   size: SKTileNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
         
     }
@@ -75,9 +75,25 @@ class SKTileNode: SKTileableNode{
         
         super.init(texture: nil,
                    color: color,
-                   size: SKTileNode.baseSize,
+                   size: SKTileNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
         
+    }
+    
+    static func getSizeFor(height: TileHeight) -> CGSize{
+        
+        let finalSize: CGSize
+        
+        switch height{
+        case .halfHeight:
+            finalSize = CGSize(width: SKTileNode.baseSize.width, height: SKTileNode.baseSize.height * 0.5)
+        case .fullHeight:
+            finalSize = SKTileNode.baseSize
+        case .doubleHeight:
+            finalSize = CGSize(width: SKTileNode.baseSize.width, height: SKTileNode.baseSize.height * 1.5)
+        }
+
+        return finalSize
     }
     
 }

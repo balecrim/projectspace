@@ -14,6 +14,25 @@ import SpriteKit
 class GameScene: IsometricGameScene {
     
     var character: SKCharacterNode?
+    var cam: SKCameraNode!
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        cam = SKCameraNode.init()
+        camera = cam
+        camera?.xScale = 0.5
+        camera?.yScale = 0.5
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        cam = SKCameraNode.init()
+        camera = cam
+        camera?.xScale = 0.5
+        camera?.yScale = 0.5
+
+    }
+
     
     override func didMove(to view: SKView) {
         
@@ -31,6 +50,9 @@ class GameScene: IsometricGameScene {
 
         
         super.didMove(to: view)
+        
+        scene?.addChild(cam)
+        
         placeIsometricTile(tile: character!, atPosition: CGPoint(x: 1, y:1), onLayer: 1)
         character?.zPosition = 100
     }

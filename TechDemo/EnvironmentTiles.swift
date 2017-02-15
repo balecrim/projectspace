@@ -67,7 +67,7 @@ extension SKTileableNode{
                                    tileDepth: 0,
                                    accessible: false,
                                    interactive: false,
-                                   tileHeight: .fullHeight)
+                                   tileHeight: .doubleHeight)
             
         }
     }
@@ -78,7 +78,7 @@ extension SKTileableNode{
                                    tileDepth: 0,
                                    accessible: false,
                                    interactive: false,
-                                   tileHeight: .fullHeight)
+                                   tileHeight: .doubleHeight)
             
         }
     }

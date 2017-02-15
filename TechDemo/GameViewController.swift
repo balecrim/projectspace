@@ -103,23 +103,38 @@ class GameViewController: UIViewController {
     
         func swipedRight() {
             print("right")
-            
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .right)
+            }
         }
         
         func swipedLeft() {
             print("left")
-            
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .left)
+            }
         }
         
         func swipedUp() {
             print("up")
-            
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .up)
+                
+            }
+
     
         }
         
         func swipedDown() {
             print("down")
-       
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .down)
+            }
+
         }
 
     
@@ -133,14 +148,15 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
-                self.scene = scene
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            let scene = GameScene.init(size: view.frame.size)
+            self.scene = scene
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFill
+            
+            // Present the scene
+            view.presentScene(scene)
+            
+            print(scene.camera!)
             
             view.ignoresSiblingOrder = true
             

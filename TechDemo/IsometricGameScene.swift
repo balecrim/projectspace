@@ -22,6 +22,8 @@ class IsometricGameScene: SKScene{
         }
         
     }
+    
+    var nextCameraPosition: CGPoint?
 
     // MARK: Initializers
 
@@ -31,6 +33,7 @@ class IsometricGameScene: SKScene{
 
         super.init(size: size)
         self.anchorPoint = CGPoint(x:0.5, y:0.5)
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -48,8 +51,7 @@ class IsometricGameScene: SKScene{
         addChild(isometricView)
         buildIsometricScene(for: tileStorage)
     
-        isometricView.position = CGPoint(x: 0, y: 0)
-        printTiles()
+        isometricView.position = CGPoint(x: 0.5, y: 0.5)
     }
 
     // MARK: Isometric tile placement
@@ -108,7 +110,7 @@ class IsometricGameScene: SKScene{
     
     func setHeights(on tileSet: [[[SKTileableNode]]]) -> [[[SKTileableNode]]]{
         for (layerNumber, layer) in tileSet.enumerated(){
-            for (rowNumber, row) in layer.enumerated(){
+            for (_, row) in layer.enumerated(){
                 for (columnNumber, tile) in row.enumerated(){
                     
                     tile.zPosition = CGFloat(columnNumber + layerNumber)
@@ -144,11 +146,10 @@ class IsometricGameScene: SKScene{
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
     }
     
-    //EXPERIMENTAL VERSION, use with EXTREME caution.
     func moveTile(tile: SKTileableNode, on direction: MovementDirection){
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
             if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
-                    print(destination.isAccessible)
+                    //print(destination.isAccessible)
                     if (destination.isAccessible){
                         
                         //storing positions
@@ -156,10 +157,18 @@ class IsometricGameScene: SKScene{
                         let destinationPosition = destination.gridPosition
                         
                         print("original: ", originalPosition, " destination: ", destinationPosition)
-                        
-                        //moving tile in the scene
-                        tile.position = destination.position
                         tile.gridPosition = destinationPosition
+
+                        //moving tile in the scene
+                        DispatchQueue.main.async {
+                            let movementAction = SKAction.move(to: destination.position, duration: 0.25)
+                            tile.run(movementAction)
+                            
+                            if tile is SKCharacterNode{
+                                self.nextCameraPosition = destination.position
+                            }
+
+                        }
                         
                     }
             }
@@ -167,44 +176,16 @@ class IsometricGameScene: SKScene{
         
     }
     
-    func printTiles(){
-        for (layerNumber, layer) in tileSet.enumerated(){
-            
-            for (rowNumber, row) in layer.enumerated(){
-                print("[", terminator: "")
-                for (columnNumber, tile) in row.enumerated(){
-                    
-                    placeIsometricTile(tile: tile,
-                                       atPosition: CGPoint(x: columnNumber, y: rowNumber),
-                                       onLayer: layerNumber)
-                    print(tile.gridPosition, tile.position, "/; ", terminator: "")
-                    
-                }
-                print("]")
-            }
+    override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
+        if let nextPos = nextCameraPosition{
+            let movementAction = SKAction.move(to: nextPos, duration: 0.5)
+            camera?.run(movementAction)
+
         }
 
-        print("Grabbed tiles:")
-        
-        for (layerNumber, layer) in tileSet.enumerated(){
-            
-            for (rowNumber, row) in layer.enumerated(){
-                print("[", terminator: "")
-                for (columnNumber, tile) in row.enumerated(){
-                    
-                    placeIsometricTile(tile: tile,
-                                       atPosition: CGPoint(x: columnNumber, y: rowNumber),
-                                       onLayer: layerNumber)
-                    print(tile.gridPosition, getTileForPosition(at: (x: tile.gridPosition.x, y: tile.gridPosition.y, z: tile.gridPosition.z))!.position, "/; ", terminator: "")
-                    
-                }
-                print("]")
-            }
-        }
-        
     }
-
-
+    
 }
 
 
