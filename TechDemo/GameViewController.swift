@@ -68,6 +68,7 @@ class GameViewController: UIViewController {
             print("up")
             DispatchQueue.main.async {
                 let gScene = self.scene as! GameScene
+                gScene.character?.texture = SKTexture.init(imageNamed: "droid_n")
                 gScene.moveTile(tile: gScene.character!, on: .up)
 
             }
@@ -77,6 +78,7 @@ class GameViewController: UIViewController {
             print("down")
             DispatchQueue.main.async {
                 let gScene = self.scene as! GameScene
+                gScene.character?.texture = SKTexture.init(imageNamed: "droid_s")
                 gScene.moveTile(tile: gScene.character!, on: .down)
             }
         }
@@ -85,6 +87,7 @@ class GameViewController: UIViewController {
             print("left")
             DispatchQueue.main.async {
                 let gScene = self.scene as! GameScene
+                gScene.character?.texture = SKTexture.init(imageNamed: "droid_w")
                 gScene.moveTile(tile: gScene.character!, on: .left)
             }
 
@@ -94,6 +97,7 @@ class GameViewController: UIViewController {
             print("right")
             DispatchQueue.main.async {
                 let gScene = self.scene as! GameScene
+                gScene.character?.texture = SKTexture.init(imageNamed: "droid_e")
                 gScene.moveTile(tile: gScene.character!, on: .right)
             }
     
