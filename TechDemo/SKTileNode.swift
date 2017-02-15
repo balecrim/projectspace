@@ -11,7 +11,7 @@ import SpriteKit
 
 class SKTileNode: SKTileableNode{
 
-    static var baseSize: CGSize = CGSize(width: 64, height: 64)
+    static var baseSize: CGSize = CGSize(width: 128, height: 128)
     
     enum TileState {
         case inactive
@@ -80,60 +80,4 @@ class SKTileNode: SKTileableNode{
         
     }
     
-}
-
-extension SKTileableNode{
-    
-    static var ground: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "isocube",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   interactive: false,
-                                   tileHeight: .fullHeight)
-        }
-    }
-    
-    static var slab: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "isoslab",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   interactive: false,
-                                   tileHeight: .halfHeight)
-        }
-    }
-    
-    static var wall: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "isowall",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   interactive: false,
-                                   tileHeight: .doubleHeight)
-        }
-    }
-
-
-    
-    static var redCube: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "redCube",
-                                   tileDepth: 0,
-                                   accessible: false,
-                                   interactive: false,
-                                   tileHeight: .fullHeight)
-        }
-    }
-    
-    static var air: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "transparent",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   interactive: false,
-                                   tileHeight: .fullHeight)
-        }
-    }
-
 }

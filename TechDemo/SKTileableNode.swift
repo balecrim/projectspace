@@ -32,15 +32,13 @@ extension SKTileableNode{
     func neighbourPosition(for direction: MovementDirection) -> (x: Int, y: Int, z: Int){
         switch direction{
             case .up:
-                return (x: self.gridPosition.x, y: (self.gridPosition.y + 1), z: self.gridPosition.z)
-            case .down:
                 return (x: self.gridPosition.x, y: (self.gridPosition.y - 1), z: self.gridPosition.z)
+            case .down:
+                return (x: self.gridPosition.x, y: (self.gridPosition.y + 1), z: self.gridPosition.z)
             case .left:
                 return (x: (self.gridPosition.x - 1), y: self.gridPosition.y, z: self.gridPosition.z)
             case .right:
                 return (x: (self.gridPosition.x + 1), y: self.gridPosition.y, z: self.gridPosition.z)
-            default:
-                return self.gridPosition
         }
     }
     

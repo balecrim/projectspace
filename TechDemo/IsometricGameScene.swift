@@ -9,7 +9,8 @@ import SpriteKit
 class IsometricGameScene: SKScene{
 
     let isometricView: SKSpriteNode
-    let tileSize = (width:32, height:32)
+    
+    let tileSize = (width:128, height:128)
 
     fileprivate var tileStorage: [[[SKTileableNode]]] = []
     
@@ -48,6 +49,7 @@ class IsometricGameScene: SKScene{
         buildIsometricScene(for: tileStorage)
     
         isometricView.position = CGPoint(x: 0, y: 0)
+        printTiles()
     }
 
     // MARK: Isometric tile placement
@@ -61,7 +63,7 @@ class IsometricGameScene: SKScene{
     ///   - onLayer: the layer which it should be placed on.
     
     func placeIsometricTile(tile: SKTileableNode, atPosition position: CGPoint, onLayer: Int) {
-
+        
         //calculating placement point for the tile, then beating it into our isometric grid.
         var point: CGPoint
         
@@ -83,7 +85,7 @@ class IsometricGameScene: SKScene{
         }
 
         //displacing point on the Y axis based on its layer
-        point = point - CGPoint(x: 0, y: CGFloat((-onLayer * (tileSize.height))))
+        point = point - CGPoint(x: 0, y: CGFloat((-onLayer * (tileSize.height / 2))))
 
         //setting up tile
         tile.position = point
@@ -107,9 +109,9 @@ class IsometricGameScene: SKScene{
     func setHeights(on tileSet: [[[SKTileableNode]]]) -> [[[SKTileableNode]]]{
         for (layerNumber, layer) in tileSet.enumerated(){
             for (rowNumber, row) in layer.enumerated(){
-                for (_, tile) in row.enumerated(){
+                for (columnNumber, tile) in row.enumerated(){
                     
-                    tile.zPosition = CGFloat(rowNumber + layerNumber)
+                    tile.zPosition = CGFloat(columnNumber + layerNumber)
                     
                 }
             }
@@ -144,33 +146,65 @@ class IsometricGameScene: SKScene{
     
     //EXPERIMENTAL VERSION, use with EXTREME caution.
     func moveTile(tile: SKTileableNode, on direction: MovementDirection){
-        
-        if let destination = getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
-            if let destFloor = getTileForPosition(at: destination.underneathPosition()) as? SKTileNode{
-                if (destination.isAccessible && destFloor.isAccessible){
-                    
-                    //storing positions
-                    let originalPosition = tile.gridPosition
-                    let destinationPosition = destination.gridPosition
-                    
-                    //moving tile in the scene
-                    tile.position = destination.position
-                    
-                    //removing old tile from the scene
-                    destination.removeFromParent()
-                    
-                    //reorganizing the matrix
-                    tileSet[destinationPosition.z][destinationPosition.y][destinationPosition.y] = tile
-                    tileSet[originalPosition.z][originalPosition.y][originalPosition.y] = .air
-                    
-                    //adding air back into the scene
-                    isometricView.addChild(tileSet[originalPosition.z][originalPosition.y][originalPosition.y])
-                    
-                }
-        
+        DispatchQueue.main.async {
+            if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
+                    print(destination.isAccessible)
+                    if (destination.isAccessible){
+                        
+                        //storing positions
+                        let originalPosition = tile.gridPosition
+                        let destinationPosition = destination.gridPosition
+                        
+                        print("original: ", originalPosition, " destination: ", destinationPosition)
+                        
+                        //moving tile in the scene
+                        tile.position = destination.position
+                        tile.gridPosition = destinationPosition
+                        
+                    }
             }
         }
+        
     }
+    
+    func printTiles(){
+        for (layerNumber, layer) in tileSet.enumerated(){
+            
+            for (rowNumber, row) in layer.enumerated(){
+                print("[", terminator: "")
+                for (columnNumber, tile) in row.enumerated(){
+                    
+                    placeIsometricTile(tile: tile,
+                                       atPosition: CGPoint(x: columnNumber, y: rowNumber),
+                                       onLayer: layerNumber)
+                    print(tile.gridPosition, tile.position, "/; ", terminator: "")
+                    
+                }
+                print("]")
+            }
+        }
+
+        print("Grabbed tiles:")
+        
+        for (layerNumber, layer) in tileSet.enumerated(){
+            
+            for (rowNumber, row) in layer.enumerated(){
+                print("[", terminator: "")
+                for (columnNumber, tile) in row.enumerated(){
+                    
+                    placeIsometricTile(tile: tile,
+                                       atPosition: CGPoint(x: columnNumber, y: rowNumber),
+                                       onLayer: layerNumber)
+                    print(tile.gridPosition, getTileForPosition(at: (x: tile.gridPosition.x, y: tile.gridPosition.y, z: tile.gridPosition.z))!.position, "/; ", terminator: "")
+                    
+                }
+                print("]")
+            }
+        }
+        
+    }
+
+
 }
 
 

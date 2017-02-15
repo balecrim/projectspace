@@ -13,33 +13,26 @@ import SpriteKit
 
 class GameScene: IsometricGameScene {
     
-    var character = SKCharacterNode?
+    var character: SKCharacterNode?
     
     override func didMove(to view: SKView) {
         
+        character = SKCharacterNode.defaultChar
         
-        
-        tileSet = [[[.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground, .ground, .ground, .ground]],
+        tileSet = [[[.ground, .ground, .ground, .ground],
+                    [.ground, .ground, .ground, .ground],
+                    [.ground, .ground, .ground, .ground],
+                    [.ground, .ground, .ground, .ground]],
 
-                   [[.wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .air, .air, .air, .air, .air, .air, .redCube],
-                    [.wall, .redCube, .redCube, .redCube, .redCube, .redCube, .redCube, .redCube]]]
+                   [[.closet, .bedL, .bedR, .closet],
+                    [.closet, .air, .air, .air],
+                    [.closet, .air, .air, .air],
+                    [.closet, .air, .air, .air]]]
 
         
         super.didMove(to: view)
-        
+        placeIsometricTile(tile: character!, atPosition: CGPoint(x: 1, y:1), onLayer: 1)
+        character?.zPosition = 100
     }
 
 

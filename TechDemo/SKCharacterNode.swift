@@ -31,4 +31,14 @@ class SKCharacterNode: SKTileableNode {
         currentDirection = direction
     }
 
+    static var defaultChar: SKCharacterNode{
+    get{
+        let texture = SKTexture.init(imageNamed: "droid")
+        return SKCharacterNode.init(texture: texture,
+                                    color: UIColor.red,
+                                    size: texture.size(),
+                                    height: .fullHeight)
+        }
+    }
+    
 }

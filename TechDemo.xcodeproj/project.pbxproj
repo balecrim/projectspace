@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */; };
 		A39564E41E48E68E00E8795D /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39564E31E48E68E00E8795D /* Operators.swift */; };
 		A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */; };
 		A3E4EDBB1E48D9C200DBE129 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTiles.swift; sourceTree = "<group>"; };
 		A39564E31E48E68E00E8795D /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		A3E4EDB11E48D9C200DBE129 /* TechDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A32BB7221E54DDA800971762 /* Tile Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */,
+			);
+			name = "Tile Definitions";
+			sourceTree = "<group>";
+		};
 		A3E4EDA81E48D9C200DBE129 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 				A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */,
 				F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */,
 				A3E4EDBE1E48D9C200DBE129 /* GameViewController.swift */,
+				A32BB7221E54DDA800971762 /* Tile Definitions */,
 				A3EB55E31E53688C0047792E /* Tile Support */,
 				A3EB55E01E53681E0047792E /* Extensions */,
 				A3EB55E41E5368B70047792E /* Resources */,
@@ -334,6 +345,7 @@
 				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
 				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
 				F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */,
+				A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */,
 				F92CE7F1FA23CA89C02E01B8 /* SKCharacterNode.swift in Sources */,
 				A3EB55E21E53682B0047792E /* Collections.swift in Sources */,
 			);

@@ -66,24 +66,36 @@ class GameViewController: UIViewController {
     
         func upArrow(){
             print("up")
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .up)
+
+            }
         }
     
         func downArrow(){
             print("down")
-            MovePersonagem().down()
-    
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .down)
+            }
         }
     
         func leftArrow(){
             print("left")
-            MovePersonagem().left()
-    
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .left)
+            }
+
         }
     
         func rightArrow(){
             print("right")
-            MovePersonagem().right()
-    
+            DispatchQueue.main.async {
+                let gScene = self.scene as! GameScene
+                gScene.moveTile(tile: gScene.character!, on: .right)
+            }
     
         }
     
@@ -121,7 +133,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") as IsometricGameScene {
+            if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
                 self.scene = scene
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
