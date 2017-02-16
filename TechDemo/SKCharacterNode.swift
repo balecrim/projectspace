@@ -30,13 +30,35 @@ class SKCharacterNode: SKTileableNode {
     func prepareForMovement(to direction: MovementDirection){
         currentDirection = direction
     }
+    
+    init(textureDict: [MovementDirection : SKTexture], color: UIColor, size: CGSize, height: TileHeight) {
+        
+        self.textures = textureDict
+        
+        super.init(texture: textureDict[.down],
+                   color: UIColor.red,
+                   size: SKTileableNode.getSizeFor(height: .fullHeight),
+                   height: .fullHeight)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     static var defaultChar: SKCharacterNode{
     get{
-        let texture = SKTexture.init(imageNamed: "droid")
-        return SKCharacterNode.init(texture: texture,
+        
+        let textureDict: [MovementDirection: SKTexture] =
+                                [.up:     SKTexture.init(imageNamed: "droid_n"),
+                                 .down:   SKTexture.init(imageNamed: "droid_s"),
+                                 .left:   SKTexture.init(imageNamed: "droid_w"),
+                                 .right:  SKTexture.init(imageNamed: "droid_e")]
+        
+        
+        
+        return SKCharacterNode.init(textureDict: textureDict,
                                     color: UIColor.red,
-                                    size: texture.size(),
+                                    size: SKTileableNode.getSizeFor(height: .fullHeight),
                                     height: .fullHeight)
         }
     }

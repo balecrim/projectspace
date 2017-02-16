@@ -20,8 +20,15 @@ class GameScene: IsometricGameScene {
         super.init(size: size)
         cam = SKCameraNode.init()
         camera = cam
-        camera?.xScale = 0.5
-        camera?.yScale = 0.5
+        
+        #if os(tvOS)
+            camera?.xScale = 0.5
+            camera?.yScale = 0.5
+        #elseif os(iOS)
+            camera?.xScale = 1
+            camera?.yScale = 1
+        #endif
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,10 +50,10 @@ class GameScene: IsometricGameScene {
                     [.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground]],
 
-                   [[.closet, .bedL, .bedR, .closet],
-                    [.closet, .air, .air, .air],
-                    [.closet, .air, .air, .air],
-                    [.closet, .air, .air, .air]]]
+                   [[.wall, .bedL, .bedR, .closet],
+                    [.wall, .air, .air, .air],
+                    [.wall, .air, .air, .air],
+                    [.wall, .air, .air, .air]]]
 
         
         super.didMove(to: view)

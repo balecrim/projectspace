@@ -50,6 +50,21 @@ extension SKTileableNode{
         return (x: self.gridPosition.x, y: self.gridPosition.y, z: (self.gridPosition.z + 1))
     }
 
-    
+    static func getSizeFor(height: TileHeight) -> CGSize{
+        
+        let finalSize: CGSize
+        
+        switch height{
+        case .halfHeight:
+            finalSize = CGSize(width: SKTileNode.baseSize.width, height: SKTileNode.baseSize.height * 0.5)
+        case .fullHeight:
+            finalSize = SKTileNode.baseSize
+        case .doubleHeight:
+            finalSize = CGSize(width: SKTileNode.baseSize.width, height: SKTileNode.baseSize.height * 1.5)
+        }
+        
+        return finalSize
+    }
+
     
 }

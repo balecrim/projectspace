@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iso_3d_droid_e.png",
+      "filename" : "iso_3d_droid_e@2x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iso_3d_droid_e@2x.png",
       "scale" : "2x"
     },
     {

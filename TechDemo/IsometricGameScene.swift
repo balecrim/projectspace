@@ -165,6 +165,7 @@ class IsometricGameScene: SKScene{
                             tile.run(movementAction)
                             
                             if tile is SKCharacterNode{
+                                (tile as! SKCharacterNode).prepareForMovement(to: direction)
                                 self.nextCameraPosition = destination.position
                             }
 
