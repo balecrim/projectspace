@@ -13,6 +13,8 @@ class IsometricGameScene: SKScene{
     let tileSize = (width:128, height:128)
 
     fileprivate var tileStorage: [[[SKTileableNode]]] = []
+    var tileAtual: SKTexture?
+    
     
     var tileSet: [[[SKTileableNode]]]{
         get{ return tileStorage }
@@ -143,6 +145,11 @@ class IsometricGameScene: SKScene{
     }
     
     func getTileForPosition(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
+        if(tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x] != nil){
+        print((tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x])!)
+            
+            tileAtual = (tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]?.texture)!
+        }
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
     }
     
@@ -151,14 +158,15 @@ class IsometricGameScene: SKScene{
             if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
-                        
+                       
                         //storing positions
                         let originalPosition = tile.gridPosition
                         let destinationPosition = destination.gridPosition
                         
                         print("original: ", originalPosition, " destination: ", destinationPosition)
                         tile.gridPosition = destinationPosition
-
+                        
+                        
                         //moving tile in the scene
                         DispatchQueue.main.async {
                             let movementAction = SKAction.move(to: destination.position, duration: 0.25)
@@ -170,6 +178,19 @@ class IsometricGameScene: SKScene{
                             }
 
                         }
+                        
+//                        let x = "button"
+//                        
+//                        guard let dataStr = x.data(using: String.Encoding.utf16) else {
+//                            print("nao foi possivel")
+//                            return
+//                        }
+//                        print("printando o title: ",self.tileAtual!)
+                    
+                        if(self.tileAtual == self.tileSet[1][3][1].texture){
+                            print("butao acionado")
+                        }
+                        
                         
                     }
             }

@@ -53,7 +53,7 @@ class GameScene: IsometricGameScene {
                    [[.wall, .bedL, .bedR, .closet],
                     [.wall, .air, .air, .air],
                     [.wall, .air, .air, .air],
-                    [.wall, .air, .air, .air]]]
+                    [.wall, .button, .air, .air]]]
 
         
         super.didMove(to: view)

@@ -83,6 +83,17 @@ extension SKTileableNode{
         }
     }
     
+    static var button: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "button",
+                                   tileDepth: 0,
+                                   accessible: true,
+                                   interactive: true,
+                                   tileHeight: .doubleHeight)
+            
+        }
+    }
+    
     
     
 }
