@@ -146,12 +146,13 @@ class IsometricGameScene: SKScene{
     
     func getTileForPosition(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
         if(tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x] != nil){
-        print((tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x])!)
             
-            tileAtual = (tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]?.texture)!
+            tileAtual = (tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture)!
         }
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
     }
+    
+    
     
     func moveTile(tile: SKTileableNode, on direction: MovementDirection){
         DispatchQueue.global().async {
@@ -179,16 +180,17 @@ class IsometricGameScene: SKScene{
 
                         }
                         
-//                        let x = "button"
-//                        
-//                        guard let dataStr = x.data(using: String.Encoding.utf16) else {
-//                            print("nao foi possivel")
-//                            return
-//                        }
-//                        print("printando o title: ",self.tileAtual!)
-                    
-                        if(self.tileAtual == self.tileSet[1][3][1].texture){
-                            print("butao acionado")
+                        
+                        
+                        if(self.tileAtual?.description == SKTileNode.button.texture?.description){
+                            
+                            self.tileSet[1][3][0].texture = SKTileNode.air.texture
+//                            self.tileSet[0][3][1].texture = SKTileNode.buttonActive.texture
+                            print("Porta Aberta")
+                        }else{
+                            self.tileSet[1][3][0].texture = SKTileNode.wall.texture
+//                            self.tileSet[0][3][1].texture = SKTileNode.button.texture
+                            print("Porta Fechada")
                         }
                         
                         

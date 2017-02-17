@@ -48,12 +48,12 @@ class GameScene: IsometricGameScene {
         tileSet = [[[.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground]],
+                    [.ground, .button, .ground, .ground]],
 
                    [[.wall, .bedL, .bedR, .closet],
                     [.wall, .air, .air, .air],
                     [.wall, .air, .air, .air],
-                    [.wall, .button, .air, .air]]]
+                    [.wall, .air, .air, .air]]]
 
         
         super.didMove(to: view)
