@@ -31,13 +31,13 @@ class SKCharacterNode: SKTileableNode {
         currentDirection = direction
     }
     
-    init(textureDict: [MovementDirection : SKTexture], color: UIColor, size: CGSize, height: TileHeight) {
+    init(textureDict: [MovementDirection : SKTexture], color: UIColor, height: TileHeight) {
         
         self.textures = textureDict
         
         super.init(texture: textureDict[.down],
                    color: UIColor.red,
-                   size: SKTileableNode.getSizeFor(height: .fullHeight),
+                   size: SKTileableNode.getSizeFor(height: height),
                    height: .fullHeight)
     }
     
@@ -49,17 +49,17 @@ class SKCharacterNode: SKTileableNode {
     get{
         
         let textureDict: [MovementDirection: SKTexture] =
-                                [.up:     SKTexture.init(imageNamed: "droid_n"),
-                                 .down:   SKTexture.init(imageNamed: "droid_s"),
-                                 .left:   SKTexture.init(imageNamed: "droid_w"),
-                                 .right:  SKTexture.init(imageNamed: "droid_e")]
+                                [.up:     SKTexture.init(imageNamed: "vilar_n"),
+                                 .down:   SKTexture.init(imageNamed: "vilar_s"),
+                                 .left:   SKTexture.init(imageNamed: "vilar_w"),
+                                 .right:  SKTexture.init(imageNamed: "vilar_e")]
         
         
         
         return SKCharacterNode.init(textureDict: textureDict,
                                     color: UIColor.red,
-                                    size: SKTileableNode.getSizeFor(height: .fullHeight),
-                                    height: .fullHeight)
+                                    height: .doubleHeight)
+        
         }
     }
     

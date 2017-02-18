@@ -23,6 +23,8 @@ class IsometricGameScene: SKScene{
         
     }
     
+    var activeTiles: [SKInteractiveNode] = []
+    
     var nextCameraPosition: CGPoint?
 
     // MARK: Initializers
@@ -146,8 +148,31 @@ class IsometricGameScene: SKScene{
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
     }
     
+    func getNearbyTiles(for tile: SKTileableNode) -> [SKTileableNode]{
+        var tileArray: [SKTileableNode?] = []
+        
+        tileArray.append(getTileForPosition(at: tile.neighbourPosition(for: .up)))
+        tileArray.append(getTileForPosition(at: tile.neighbourPosition(for: .down)))
+        tileArray.append(getTileForPosition(at: tile.neighbourPosition(for: .left)))
+        tileArray.append(getTileForPosition(at: tile.neighbourPosition(for: .right)))
+
+        var returnArray: [SKTileableNode] = []
+        
+        for tile in tileArray{
+            if let unwrappedTile = tile{
+                returnArray.append(unwrappedTile)
+            }
+        }
+        
+        return returnArray
+    }
+    
     func moveTile(tile: SKTileableNode, on direction: MovementDirection){
         DispatchQueue.global().async {
+            
+            (tile as? SKCharacterNode)?.prepareForMovement(to: direction)
+
+            
             if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
@@ -167,26 +192,54 @@ class IsometricGameScene: SKScene{
                             if tile is SKCharacterNode{
                                 (tile as! SKCharacterNode).prepareForMovement(to: direction)
                                 self.nextCameraPosition = destination.position
-                            }
-
+                                
+                                //handling tile hinting...
+                                let nearbyTiles = self.getNearbyTiles(for: tile)
+                                for nearbyTile in nearbyTiles{
+                                    if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
+                                        nearbyInteractive.hint()
+                                    }
+                                }
                         }
                         
                     }
+                }
             }
-        }
         
+        }
     }
-    
+        
+    func characterSelect(near tile: SKTileableNode){
+        //in case there's something that is already selected...
+        if activeTiles.count > 0{
+            for tile in activeTiles{
+                tile.deactivate()
+                activeTiles.remove(at: self.activeTiles.index(of: tile)!)
+                
+            }
+        } else {
+            //otherwise, select something.
+            let nearbyTiles = self.getNearbyTiles(for: tile)
+            for nearbyTile in nearbyTiles{
+                if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
+                    nearbyInteractive.activate()
+                    self.activeTiles.append(nearbyInteractive)
+                }
+            }
+            
+        }
+    }
+        
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         if let nextPos = nextCameraPosition{
             let movementAction = SKAction.move(to: nextPos, duration: 0.5)
             camera?.run(movementAction)
-
+            
         }
-
+        
     }
-    
+
 }
 
 

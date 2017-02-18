@@ -13,6 +13,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     var scene: SKScene?
+    var character: SKCharacterNode?
     
     #if os(iOS)
         override var prefersStatusBarHidden: Bool{
@@ -52,8 +53,16 @@ class GameViewController: UIViewController {
         addGestureRecognizerWithType(UIPressType.select, selector: #selector(self.selectButton))
         addGestureRecognizerWithType(UIPressType.menu, selector: #selector(self.menu))
         addGestureRecognizerWithType(UIPressType.playPause, selector: #selector(self.playPause))
+        
     }
     
+    @IBAction func selectPressed(_ sender: Any) {
+        let gScene = self.scene as! GameScene
+        if let character = gScene.character{
+            gScene.characterSelect(near: character)
+        }
+
+    }
     
     // MARK: Tap events
     func selectButton(){
@@ -84,6 +93,7 @@ class GameViewController: UIViewController {
     func right(){
         move(on: .right)
     }
+    
     
     func move(on direction: MovementDirection){
         

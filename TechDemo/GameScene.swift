@@ -44,6 +44,7 @@ class GameScene: IsometricGameScene {
     override func didMove(to view: SKView) {
         
         character = SKCharacterNode.defaultChar
+        let trash = SKTileableNode.trash
         
         tileSet = [[[.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground],
@@ -53,7 +54,7 @@ class GameScene: IsometricGameScene {
                    [[.wall, .bedL, .bedR, .closet],
                     [.wall, .air, .air, .air],
                     [.wall, .air, .air, .air],
-                    [.wall, .air, .air, .air]]]
+                    [.wall, .air, .air, trash]]]
 
         
         super.didMove(to: view)
@@ -62,7 +63,10 @@ class GameScene: IsometricGameScene {
         
         placeIsometricTile(tile: character!, atPosition: CGPoint(x: 1, y:1), onLayer: 1)
         character?.zPosition = 100
+        
+//        trash.activate()
     }
+
 
 
 }
