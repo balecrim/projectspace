@@ -110,17 +110,25 @@ extension SKTileableNode{
         }
     }
     
-    static var button: SKInteractiveNode{
+    static var button: SKTileNode{
         get{
-            let texture = SKTexture.init(imageNamed: "button")
-            return SKInteractiveNode.init(spriteTexture: texture,
-                                          tileDepth: 0,
-                                          tileHeight: .fullHeight)
+            return SKTileNode.init(spriteName: "button",
+                                   tileDepth: 0,
+                                   accessible: true,
+                                   tileHeight: .fullHeight)
             
         }
     }
     
-    
+    static var buttonActive: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "buttonActive",
+                                   tileDepth: 0,
+                                   accessible: true,
+                                   tileHeight: .fullHeight)
+            
+        }
+    }
     
     
 }

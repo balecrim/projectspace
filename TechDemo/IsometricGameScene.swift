@@ -7,19 +7,21 @@ import Foundation
 import SpriteKit
 
 class IsometricGameScene: SKScene{
-
     let isometricView: SKSpriteNode
     
     let tileSize = (width:128, height:128)
 
     fileprivate var tileStorage: [[[SKTileableNode]]] = []
-   
+    //Position of button
+    var x,y,z: Int?
+    
     
     var tileSet: [[[SKTileableNode]]] = [[[]]]
     
     var activeTiles: [SKInteractiveNode] = []
     
     var nextCameraPosition: CGPoint?
+    
 
     // MARK: Initializers
 
@@ -123,10 +125,19 @@ class IsometricGameScene: SKScene{
     func getTileForPositionButton(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
         
         if(tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture?.description == SKTileNode.button.texture?.description){
-            tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture = SKTexture(image: UIImage(named: "buttonActive")!)
+            x = pos.x
+            y = pos.y
+            z = pos.z
+            DispatchQueue.main.async {
+                self.tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture = SKTileNode.buttonActive.texture
+            }
             return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
+        }else if (tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]?.texture?.description == SKTileNode.air.texture?.description && x != nil && y != nil && z != nil) {
+            DispatchQueue.main.async{
+            self.tileSet[safe: self.z!-1]?[safe: self.y!]?[safe: self.x!]?.texture = SKTileNode.button.texture
+            }
+            return nil
         }else{
-            
             return nil
         }
         
@@ -175,9 +186,9 @@ class IsometricGameScene: SKScene{
             
             ///Phase 3: if there's an accessible tile in front of it, actually move character...
             if(self.getTileForPositionButton(at: character.neighbourPosition(for: direction)) == nil){
-                
+                print("nada de ação")
             }else{
-                
+                print("Ação chamada")
             }
             if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
