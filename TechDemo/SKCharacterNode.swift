@@ -19,6 +19,8 @@ class SKCharacterNode: SKTileableNode {
             return directionStorage
         }
         set {
+            directionStorage  = newValue
+            
             if let newTexture = textures[newValue]{
                 texture = newTexture
             }
@@ -29,6 +31,7 @@ class SKCharacterNode: SKTileableNode {
     
     func prepareForMovement(to direction: MovementDirection){
         currentDirection = direction
+        print(currentDirection)
     }
     
     init(textureDict: [MovementDirection : SKTexture], color: UIColor, height: TileHeight) {

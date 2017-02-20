@@ -38,6 +38,16 @@ extension SKTileableNode{
         }
     }
     
+    static var postItWall: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "isopostit",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
+        }
+    }
+
+    
     static var air: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "transparent",

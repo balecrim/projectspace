@@ -56,19 +56,19 @@ class IsometricGameScene: SKScene{
         isometricView.position = CGPoint(x: 0.5, y: 0.5)
     }
 
-    // MARK: Isometric tile placement
+    // MARK: Isometric character placement
 
-    /// Calculates position for tile based on its position and layer, then adds it to the
+    /// Calculates position for character based on its position and layer, then adds it to the
     /// isometricView node.
     ///
     /// - Parameters:
-    ///   - tile: the tile which should be added.
+    ///   - character: the character which should be added.
     ///   - position: the position which it should be placed at.
     ///   - onLayer: the layer which it should be placed on.
     
     func placeIsometricTile(tile: SKTileableNode, atPosition position: CGPoint, onLayer: Int) {
         
-        //calculating placement point for the tile, then beating it into our isometric grid.
+        //calculating placement point for the character, then beating it into our isometric grid.
         var point: CGPoint
         
         switch tile.height{
@@ -91,12 +91,12 @@ class IsometricGameScene: SKScene{
         //displacing point on the Y axis based on its layer
         point = point - CGPoint(x: 0, y: CGFloat((-onLayer * (tileSize.height / 2))))
 
-        //setting up tile
+        //setting up character
         tile.position = point
         tile.anchorPoint = CGPoint(x:0, y:0)
         tile.gridPosition = (x: Int(position.x), y: Int(position.y), z: onLayer)
 
-        //check if there's an old tile at that position and remove it...
+        //check if there's an old character at that position and remove it...
         if let oldTile = tileSet[safe: onLayer]?[safe: Int(position.y)]?[safe: Int(position.x)]{
             oldTile.removeFromParent()
         }
@@ -167,49 +167,78 @@ class IsometricGameScene: SKScene{
         return returnArray
     }
     
-    func moveTile(tile: SKTileableNode, on direction: MovementDirection){
+    func move(character: SKCharacterNode, on direction: MovementDirection){
         DispatchQueue.global().async {
             
-            (tile as? SKCharacterNode)?.prepareForMovement(to: direction)
-
+            ///Phase 1: change direction for character...
             
-            if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
+            character.prepareForMovement(to: direction)
+            
+            ///Phase 2: check if there's an active tile in front of the character...
+            
+            DispatchQueue.main.async {
+                //handling character hinting...
+                let nearbyTile = self.getTileForPosition(at: character.neighbourPosition(for: direction))
+                if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
+                    nearbyInteractive.hint()
+                }
+
+            }
+            
+            ///Phase 3: if there's an accessible tile in front of it, actually move character...
+
+            if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
                         
                         //storing positions
-                        let originalPosition = tile.gridPosition
+                        let originalPosition = character.gridPosition
                         let destinationPosition = destination.gridPosition
                         
-                        print("original: ", originalPosition, " destination: ", destinationPosition)
-                        tile.gridPosition = destinationPosition
+                        print("original:", originalPosition, " destination:", destinationPosition, "direction:", direction)
+                        character.gridPosition = destinationPosition
 
-                        //moving tile in the scene
+                        //moving character in the scene
                         DispatchQueue.main.async {
-                            let movementAction = SKAction.move(to: destination.position, duration: 0.25)
-                            tile.run(movementAction)
                             
-                            if tile is SKCharacterNode{
-                                (tile as! SKCharacterNode).prepareForMovement(to: direction)
-                                self.nextCameraPosition = destination.position
-                                
-                                //handling tile hinting...
-                                let nearbyTiles = self.getNearbyTiles(for: tile)
-                                for nearbyTile in nearbyTiles{
-                                    if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
-                                        nearbyInteractive.hint()
-                                    }
-                                }
-                        }
-                        
+                            let movementAction = SKAction.move(to: destination.position, duration: 0.25)
+                            character.run(movementAction)
+                            
+                            self.nextCameraPosition = destination.position
+                            
                     }
                 }
             }
         
         }
     }
-        
-    func characterSelect(near tile: SKTileableNode){
+    
+    
+    ///Galera, isso é um mock, tá?
+    
+//    func buttonCheck(){
+//        
+//        for (layerNumber, layer) in tileSet.enumerated(){
+//            for (rowNumber, row) in layer.enumerated(){
+//                for (columnNumber, tile) in row.enumerated(){
+//                    
+//                    if let button = getTileForPosition(at: tile.underneathPosition()){
+//                        if (button is SKInteractiveNode && tile is SKInteractiveNode){
+//                            DispatchQueue.main.async {
+//                                button.onActivate()
+//                            }
+//                        }
+//                    }
+//                    
+//                }
+//            }
+//        }
+//
+//        
+//        
+//    }
+    
+    func characterSelect(near tile: SKCharacterNode){
         //in case there's something that is already selected...
         if activeTiles.count > 0{
             for tile in activeTiles{
@@ -219,12 +248,10 @@ class IsometricGameScene: SKScene{
             }
         } else {
             //otherwise, select something.
-            let nearbyTiles = self.getNearbyTiles(for: tile)
-            for nearbyTile in nearbyTiles{
-                if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
-                    nearbyInteractive.activate()
-                    self.activeTiles.append(nearbyInteractive)
-                }
+            let nearbyTile = self.getTileForPosition(at: tile.neighbourPosition(for: tile.currentDirection))
+            if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
+                nearbyInteractive.activate()
+                self.activeTiles.append(nearbyInteractive)
             }
             
         }

@@ -99,7 +99,7 @@ class GameViewController: UIViewController {
         
         DispatchQueue.main.async {
             let gScene = self.scene as! GameScene
-            gScene.moveTile(tile: gScene.character!, on: direction)
+            gScene.move(character: gScene.character!, on: direction)
         }
 
     }

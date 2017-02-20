@@ -51,8 +51,8 @@ class GameScene: IsometricGameScene {
                     [.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground]],
 
-                   [[.wall, .bedL, .bedR, .closet],
-                    [.wall, .air, .air, .air],
+                   [[.postItWall, .bedL, .bedR, .closet],
+                    [.closet, .air, .air, .air],
                     [.wall, .air, .air, .air],
                     [.wall, .air, .air, trash]]]
 

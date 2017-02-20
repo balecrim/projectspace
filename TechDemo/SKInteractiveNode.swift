@@ -18,6 +18,11 @@ class SKInteractiveNode: SKTileNode{
         case objectiveFulfilled
     }
     
+    enum InteractionType{
+        case transportable
+        case animatable
+    }
+    
     var currentState: TileState = .inactive
     var childNode: SKSpriteNode
     var secondaryNode: SKShapeNode?
