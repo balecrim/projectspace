@@ -123,8 +123,10 @@ class IsometricGameScene: SKScene{
     func getTileForPositionButton(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
         
         if(tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture?.description == SKTileNode.button.texture?.description){
+            tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture = SKTexture(image: UIImage(named: "buttonActive")!)
             return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
         }else{
+            
             return nil
         }
         
@@ -172,7 +174,11 @@ class IsometricGameScene: SKScene{
             }
             
             ///Phase 3: if there's an accessible tile in front of it, actually move character...
-
+            if(self.getTileForPositionButton(at: character.neighbourPosition(for: direction)) == nil){
+                
+            }else{
+                
+            }
             if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
