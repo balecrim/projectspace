@@ -2,47 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9e1833-c195-4895-8a86-c0f5f33d8ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/bedL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/bedR.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isowall.imageset/wall.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/AppDelegate.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/Assets.xcassets/AppIcon.appiconset/Contents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/Assets.xcassets/Contents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/Base.lproj/LaunchScreen.storyboard" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/Base.lproj/Main.storyboard" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/GameViewController.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOS/Info.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOSTests/Info.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOSTests/TechDemo_iOSTests.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOSUITests/Info.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo-iOSUITests/TechDemo_iOSUITests.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Bitmap@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Bitmap@2x.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Bitmap@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Bitmap@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Game.xcassets/Spaceship.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Game.xcassets/Spaceship.imageset/Spaceship.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/iso_ground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Game.xcassets/iso_ground.imageset/iso_ground@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/SpriteKit-related assets/Actions.sks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/SpriteKit-related assets/GameScene.sks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/SpriteKit-related assets/MyTileSet.sks" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Bed1@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Bed2@2x.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isocloset.imageset/Ativo 2@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isocube.imageset/Ativo 6@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isopostit.imageset/Ativo 5@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isoshelf.imageset/Ativo 10@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Ativo 3@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Ativo 4@0.5x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isopostit.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isoshelf.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/Contents.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/bedL.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/bedR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocloset.imageset/Ativo 1@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocube.imageset/Tile1@2x.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocloset.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isocloset.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isocube.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isocube.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isowall.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isowall.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isowall.imageset/wall.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/isowall.imageset/wall.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/transparent.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/transparent.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/transparent.imageset/transparent.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/transparent.imageset/transparent.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/trashCan.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/trashCan.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/trashCan.imageset/trashCan.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/trashCan.imageset/trashCan.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_e.imageset/Ativo 15@0.5x.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_e.imageset/Ativo 15@0.5x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_e.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_e.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_n.imageset/Ativo 17@0.5x.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_n.imageset/Ativo 17@0.5x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_n.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_n.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_s.imageset/Ativo 14@0.5x.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_s.imageset/Ativo 14@0.5x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_s.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_s.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_w.imageset/Ativo 16@0.5x.png" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_w.imageset/Ativo 16@0.5x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/vilar_w.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Vilar/vilar_w.imageset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo-iOS/GameViewController.swift" afterPath="$PROJECT_DIR$/TechDemo-iOS/GameViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedL.imageset/Contents.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/bedR.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isowall.imageset/Contents.json" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/isowall.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/GameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/GameScene.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift" afterPath="$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SpriteKit-related assets/GameScene.sks" afterPath="$PROJECT_DIR$/TechDemo/SpriteKit-related assets/GameScene.sks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/GameViewController.swift" afterPath="$PROJECT_DIR$/TechDemo/GameViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKTileNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/GameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/GameScene.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKCharacterNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKCharacterNode.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,20 +55,87 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="appletvos" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Operators.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TechDemo/Operators.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding>
-                <element signature="e#146#163#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Operators.swift" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TechDemo/Operators.swift">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#146#163#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SKInteractiveNode.swift" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-113">
+                  <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#155#172#0" expanded="true" />
+                    <marker date="1487447320000" expanded="true" signature="722:2210" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2260:2343" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2360:2798" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2819:3140" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="3167:3422" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="3457:3552" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IsometricGameScene.swift" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="SKTileNode.swift" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TechDemo/SKTileNode.swift">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EnvironmentTiles.swift" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1095">
+                  <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+                  <folding>
+                    <marker date="1487447320000" expanded="true" signature="1416:1670" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="1429:1664" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="1709:1977" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="1722:1971" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2014:2277" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2027:2271" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2314:2577" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2327:2571" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2622:2919" ph="{...}" />
+                    <marker date="1487447320000" expanded="true" signature="2635:2913" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,10 +146,12 @@
         <option value="$PROJECT_DIR$/TechDemo/CGPoint+IsometricConversion.swift" />
         <option value="$PROJECT_DIR$/TechDemo/Tiles.swift" />
         <option value="$PROJECT_DIR$/TechDemo/GameScene.swift" />
-        <option value="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
-        <option value="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
         <option value="$PROJECT_DIR$/TechDemo/SKCharacterNode.swift" />
         <option value="$PROJECT_DIR$/TechDemo/SKTileableNode.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/SKTileNode.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift" />
+        <option value="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
       </list>
     </option>
   </component>
@@ -136,7 +204,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TechDemo" />
+              <option name="myItemId" value="Game Implementation" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -150,7 +218,61 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Game Implementation" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="TechDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game Implementation" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tile Definitions" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine Implementation" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Engine Implementation" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -218,8 +340,16 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="TechDemo-iOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TechDemo" TARGET_NAME="TechDemo-iOS" CONFIG_NAME="Debug" SCHEME_NAME="TechDemo-iOS" RUN_TARGET_PROJECT_NAME="TechDemo" RUN_TARGET_NAME="TechDemo-iOS" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.TechDemo" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TechDemo-iOS" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -242,17 +372,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13780000" />
+    <option name="totallyTimeSpent" value="16778000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="1003" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1680" height="1003" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11547619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -263,7 +394,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -276,7 +406,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -494,6 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -501,6 +632,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -518,6 +650,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -542,6 +675,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="61" column="33" lean-forward="false" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -579,6 +713,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -587,16 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#110#127#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -622,13 +747,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TechDemo/SKTileNode.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -649,6 +768,57 @@
           <folding>
             <element signature="e#146#163#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1487447320000" expanded="true" signature="1416:1670" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="1429:1664" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="1709:1977" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="1722:1971" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2014:2277" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2027:2271" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2314:2577" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2327:2571" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2622:2919" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2635:2913" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TechDemo/SKTileNode.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+          <folding>
+            <element signature="e#155#172#0" expanded="true" />
+            <marker date="1487447320000" expanded="true" signature="722:2210" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2260:2343" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2360:2798" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="2819:3140" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="3167:3422" ph="{...}" />
+            <marker date="1487447320000" expanded="true" signature="3457:3552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

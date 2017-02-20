@@ -12,18 +12,8 @@ import SpriteKit
 class SKTileNode: SKTileableNode{
 
     static var baseSize: CGSize = CGSize(width: 128, height: 128)
-    
-    enum TileState {
-        case inactive
-        case interacting
-        case objectiveFulfilled
-    }
 
     var isAccessible: Bool = true
-    var isInteractive: Bool = false
-    var currentState: TileState = .inactive
-
-    var depth: Int = 0
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,52 +22,45 @@ class SKTileNode: SKTileableNode{
     init(spriteName: String = "iso_ground",
          tileDepth: Int = 0,
          accessible: Bool = true,
-         interactive: Bool = false,
          tileHeight: TileHeight = .fullHeight){
 
-        depth = tileDepth
         isAccessible = accessible
-        isInteractive = interactive
 
         super.init(texture: SKTexture.init(imageNamed: spriteName),
-                   color: UIColor.red,
+                   color: UIColor.clear,
                    size: SKTileableNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
-        
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
     
-    init(spriteTexture: SKTexture = SKTexture.init(imageNamed: "iso_ground"),
+    init(spriteTexture: SKTexture? = SKTexture.init(imageNamed: "iso_ground"),
          tileDepth: Int = 0,
          accessible: Bool = true,
-         interactive: Bool = false,
          tileHeight: TileHeight = .fullHeight){
-        
-        depth = tileDepth
+
         isAccessible = accessible
-        isInteractive = interactive
-        
+
         super.init(texture: spriteTexture,
-                   color: UIColor.red,
+                   color: UIColor.clear,
                    size: SKTileableNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
-        
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
     }
     
-    init(color: UIColor = UIColor.red,
+    init(color: UIColor = UIColor.clear,
          tileDepth: Int = 0,
          accessible: Bool = true,
-         interactive: Bool = false,
          tileHeight: TileHeight = .fullHeight){
-        
-        depth = tileDepth
+
         isAccessible = accessible
-        isInteractive = interactive
-        
+
         super.init(texture: nil,
                    color: color,
                    size: SKTileableNode.getSizeFor(height: tileHeight),
                    height: tileHeight)
-        
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+
     }
     
     

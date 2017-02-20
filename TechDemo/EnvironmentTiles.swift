@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 extension SKTileableNode{
     
@@ -15,37 +16,34 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "isocube",
                                    tileDepth: 0,
                                    accessible: true,
-                                   interactive: false,
                                    tileHeight: .fullHeight)
         }
     }
-    
-    static var slab: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "isoslab",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   interactive: false,
-                                   tileHeight: .halfHeight)
-        }
-    }
-    
+        
     static var wall: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "isowall",
                                    tileDepth: 0,
                                    accessible: false,
-                                   interactive: false,
                                    tileHeight: .doubleHeight)
         }
     }
+    
+    static var postItWall: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "isopostit",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
+        }
+    }
+
     
     static var air: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "transparent",
                                    tileDepth: 0,
                                    accessible: true,
-                                   interactive: false,
                                    tileHeight: .fullHeight)
         }
     }
@@ -55,7 +53,6 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "isocloset",
                                    tileDepth: 0,
                                    accessible: false,
-                                   interactive: false,
                                    tileHeight: .doubleHeight)
             
         }
@@ -66,7 +63,6 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "bedL",
                                    tileDepth: 0,
                                    accessible: false,
-                                   interactive: false,
                                    tileHeight: .doubleHeight)
             
         }
@@ -77,31 +73,41 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "bedR",
                                    tileDepth: 0,
                                    accessible: false,
-                                   interactive: false,
                                    tileHeight: .doubleHeight)
             
         }
     }
     
-    static var button: SKTileNode{
+    static var log: SKTileNode{
         get{
-            return SKTileNode.init(spriteName: "button",
+            return SKTileNode.init(spriteName: "isolog",
                                    tileDepth: 0,
-                                   accessible: true,
-                                   interactive: true,
-                                   tileHeight: .fullHeight)
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
             
         }
     }
     
-    static var buttonActive: SKTileNode{
+    static var shelf: SKTileNode{
         get{
-            return  SKTileNode.init(spriteName: "buttonActive",
-                                       tileDepth: 0,
-                                       accessible: true,
-                                       interactive: true,
-                                       tileHeight: .fullHeight)
-            }
+            return SKTileNode.init(spriteName: "isoshelf",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
+            
+        }
+    }
+
+
+    
+    static var trash: SKInteractiveNode{
+        get{
+            let texture = SKTexture.init(imageNamed: "trashCan")
+            return SKInteractiveNode.init(spriteTexture: texture,
+                                          tileDepth: 0,
+                                          tileHeight: .fullHeight)
+            
+        }
     }
     
     
