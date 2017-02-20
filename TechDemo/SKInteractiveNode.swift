@@ -21,6 +21,8 @@ class SKInteractiveNode: SKTileNode{
     enum InteractionType{
         case transportable
         case animatable
+        case button
+        case custom
     }
     
     var currentState: TileState = .inactive
@@ -31,16 +33,22 @@ class SKInteractiveNode: SKTileNode{
          tileDepth: Int = 0,
          tileHeight: TileHeight = .fullHeight){
         
-        secondaryNode = SKShapeNode.init(ellipseOf: CGSize(width: spriteTexture.size().width,
-                                                           height: (spriteTexture.size().height / 2)))
+        //HACK HACK HACK
+        //TODO: Reimplement this by calculating a size multiplier from both the texture and the baseSize
+        //instead of just dividing everyone by 2 for @2x.
+
+        
+        secondaryNode = SKShapeNode.init(ellipseOf: CGSize(width: spriteTexture.size().width / 2,
+                                                           height: (spriteTexture.size().height / 4)))
         secondaryNode?.strokeColor = UIColor.clear
         secondaryNode?.fillColor = UIColor.darkGray
         secondaryNode?.alpha = 0
         
         
+        let size = CGSize.init(width: spriteTexture.size().width / 2, height: spriteTexture.size().height / 2)
         childNode = SKSpriteNode.init(texture: spriteTexture,
                                       color: UIColor.clear,
-                                      size: spriteTexture.size())
+                                      size: size)
         childNode.zPosition = 1
         
 

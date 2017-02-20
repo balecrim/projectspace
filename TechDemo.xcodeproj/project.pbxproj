@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32AB0281E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
+		A32AB0291E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
 		A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */; };
 		A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB72B1E55F84F00971762 /* AppDelegate.swift */; };
 		A32BB7341E55F84F00971762 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7331E55F84F00971762 /* GameViewController.swift */; };
@@ -23,7 +25,6 @@
 		A32BB7671E55F96A00971762 /* CGPoint+IsometricConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92CE83608AB6588F04FEC63 /* CGPoint+IsometricConversion.swift */; };
 		A32BB7681E55F96A00971762 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB55E11E53682B0047792E /* Collections.swift */; };
 		A32BB76C1E55F98D00971762 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDE91E48DF9200DBE129 /* sprites.atlas */; };
-		A32BB76D1E55F99000971762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */; };
 		A32BB76E1E55F99000971762 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */; };
 		A32BB7701E55FB8A00971762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BB76F1E55FB8A00971762 /* Assets.xcassets */; };
 		A32BB7741E55FC8700971762 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */; };
@@ -35,7 +36,6 @@
 		A3E4EDBB1E48D9C200DBE129 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */; };
 		A3E4EDBD1E48D9C200DBE129 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */; };
 		A3E4EDC21E48D9C200DBE129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDC01E48D9C200DBE129 /* Main.storyboard */; };
-		A3E4EDC41E48D9C200DBE129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */; };
 		A3E4EDCF1E48D9C300DBE129 /* TechDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDCE1E48D9C300DBE129 /* TechDemoTests.swift */; };
 		A3E4EDDA1E48D9C300DBE129 /* TechDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDD91E48D9C300DBE129 /* TechDemoUITests.swift */; };
 		A3E4EDEA1E48DF9200DBE129 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDE91E48DF9200DBE129 /* sprites.atlas */; };
@@ -79,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A32AB0271E5B766800C1EB0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TechDemo/Assets.xcassets; sourceTree = "<group>"; };
 		A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTiles.swift; sourceTree = "<group>"; };
 		A32BB7291E55F84F00971762 /* TechDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BB72B1E55F84F00971762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Game.xcassets; path = TechDemo/Game.xcassets; sourceTree = "<group>"; };
 		A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = TechDemo/GameScene.swift; sourceTree = "<group>"; };
 		A3E4EDC11E48D9C200DBE129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TechDemo/Assets.xcassets; sourceTree = "<group>"; };
 		A3E4EDC51E48D9C200DBE129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E4EDCA1E48D9C300DBE129 /* TechDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E4EDCE1E48D9C300DBE129 /* TechDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechDemoTests.swift; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				A3E4EDE91E48DF9200DBE129 /* sprites.atlas */,
-				A3E4EDC31E48D9C200DBE129 /* Assets.xcassets */,
 				A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */,
+				A32AB0271E5B766800C1EB0E /* Assets.xcassets */,
 				A32BB7221E54DDA800971762 /* Tile Definitions */,
 			);
 			name = Resources;
@@ -530,8 +530,8 @@
 				A32BB7371E55F84F00971762 /* Main.storyboard in Resources */,
 				A32BB76C1E55F98D00971762 /* sprites.atlas in Resources */,
 				A32BB76E1E55F99000971762 /* Game.xcassets in Resources */,
-				A32BB76D1E55F99000971762 /* Assets.xcassets in Resources */,
 				A32BB7701E55FB8A00971762 /* Assets.xcassets in Resources */,
+				A32AB0291E5B766800C1EB0E /* Assets.xcassets in Resources */,
 				A32BB73C1E55F84F00971762 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,8 +556,8 @@
 			files = (
 				A3E4EDEA1E48DF9200DBE129 /* sprites.atlas in Resources */,
 				A3E4EDBB1E48D9C200DBE129 /* Game.xcassets in Resources */,
+				A32AB0281E5B766800C1EB0E /* Assets.xcassets in Resources */,
 				A3E4EDC21E48D9C200DBE129 /* Main.storyboard in Resources */,
-				A3E4EDC41E48D9C200DBE129 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

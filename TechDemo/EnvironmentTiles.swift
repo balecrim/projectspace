@@ -19,16 +19,7 @@ extension SKTileableNode{
                                    tileHeight: .fullHeight)
         }
     }
-    
-    static var slab: SKTileNode{
-        get{
-            return SKTileNode.init(spriteName: "isoslab",
-                                   tileDepth: 0,
-                                   accessible: true,
-                                   tileHeight: .halfHeight)
-        }
-    }
-    
+        
     static var wall: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "isowall",
@@ -86,6 +77,28 @@ extension SKTileableNode{
             
         }
     }
+    
+    static var log: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "isolog",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
+            
+        }
+    }
+    
+    static var shelf: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "isoshelf",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .doubleHeight)
+            
+        }
+    }
+
+
     
     static var trash: SKInteractiveNode{
         get{

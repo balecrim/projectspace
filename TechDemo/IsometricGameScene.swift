@@ -11,17 +11,8 @@ class IsometricGameScene: SKScene{
     let isometricView: SKSpriteNode
     
     let tileSize = (width:128, height:128)
-
-    fileprivate var tileStorage: [[[SKTileableNode]]] = []
     
-    var tileSet: [[[SKTileableNode]]]{
-        get{ return tileStorage }
-        set{
-            let adjustedTileSet = setHeights(on: newValue)
-            tileStorage = adjustedTileSet
-        }
-        
-    }
+    var tileSet: [[[SKTileableNode]]] = [[[]]]
     
     var activeTiles: [SKInteractiveNode] = []
     
@@ -51,7 +42,7 @@ class IsometricGameScene: SKScene{
         super.didMove(to: view)
 
         addChild(isometricView)
-        buildIsometricScene(for: tileStorage)
+        buildIsometricScene(for: tileSet)
     
         isometricView.position = CGPoint(x: 0.5, y: 0.5)
     }
@@ -101,27 +92,9 @@ class IsometricGameScene: SKScene{
             oldTile.removeFromParent()
         }
         
+        tile.zPosition = CGFloat(Int(position.x) + onLayer)
+
         isometricView.addChild(tile)
-    }
-
-    /// Sets the correct zPosition for all tiles on a tileSet, 
-    /// leaving the scene ready for occlusion support.
-    ///
-    /// - Parameter tileSet: the tileSet to perform height adjustment on.
-    /// - Returns: A copy of the tileSet with adjusted heights.
-    
-    func setHeights(on tileSet: [[[SKTileableNode]]]) -> [[[SKTileableNode]]]{
-        for (layerNumber, layer) in tileSet.enumerated(){
-            for (_, row) in layer.enumerated(){
-                for (columnNumber, tile) in row.enumerated(){
-                    
-                    tile.zPosition = CGFloat(columnNumber + layerNumber)
-                    
-                }
-            }
-        }
-
-        return tileSet
     }
     
     /// Renders an isometric view based on a tileSet.
@@ -212,32 +185,7 @@ class IsometricGameScene: SKScene{
         
         }
     }
-    
-    
-    ///Galera, isso é um mock, tá?
-    
-//    func buttonCheck(){
-//        
-//        for (layerNumber, layer) in tileSet.enumerated(){
-//            for (rowNumber, row) in layer.enumerated(){
-//                for (columnNumber, tile) in row.enumerated(){
-//                    
-//                    if let button = getTileForPosition(at: tile.underneathPosition()){
-//                        if (button is SKInteractiveNode && tile is SKInteractiveNode){
-//                            DispatchQueue.main.async {
-//                                button.onActivate()
-//                            }
-//                        }
-//                    }
-//                    
-//                }
-//            }
-//        }
-//
-//        
-//        
-//    }
-    
+        
     func characterSelect(near tile: SKCharacterNode){
         //in case there's something that is already selected...
         if activeTiles.count > 0{
