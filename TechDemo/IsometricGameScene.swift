@@ -13,8 +13,7 @@ class IsometricGameScene: SKScene{
     let tileSize = (width:128, height:128)
 
     fileprivate var tileStorage: [[[SKTileableNode]]] = []
-    var tileAtual: SKTexture?
-    var tileVerificarButton: SKTexture?
+   
     
     var tileSet: [[[SKTileableNode]]]{
         get{ return tileStorage }
@@ -144,14 +143,28 @@ class IsometricGameScene: SKScene{
         }
     }
     
+    func getTileForPositionButton(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
+        
+        if(tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture?.description == SKTileNode.button.texture?.description){
+            return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
+        }else{
+            return nil
+        }
+        
+    }
+    
     func getTileForPosition(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
     }
     
     
-    
     func moveTile(tile: SKTileableNode, on direction: MovementDirection){
         DispatchQueue.global().async {
+            if(self.getTileForPositionButton(at:tile.neighbourPosition(for: direction))?.texture?.description == nil){
+            
+            }else{
+                
+            }
             if let destination = self.getTileForPosition(at: tile.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
@@ -173,19 +186,17 @@ class IsometricGameScene: SKScene{
                                 (tile as! SKCharacterNode).prepareForMovement(to: direction)
                                 self.nextCameraPosition = destination.position
                             }
-
+                            
                         }
                         
-                        
-                        
-                       
-                        
-                        
+                    
                     }
             }
         }
         
     }
+    
+    
     
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
