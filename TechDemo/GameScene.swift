@@ -46,10 +46,10 @@ class GameScene: IsometricGameScene {
         character = SKCharacterNode.defaultChar
         let trash = SKTileableNode.trash
         
-        tileSet = [[[.air, .ground, .ground, .ground, .ground],
-                    [.air, .ground, .ground, .ground, .ground],
-                    [.air, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .ground, .ground]],
+        tileSet = [[[.ground, .ground, .ground, .ground, .ground],
+                    [.ground, .ground, .ground, .ground, .ground],
+                    [.ground, .ground, .ground, .ground, .ground],
+                    [.ground, .ground, .button, .ground, .ground]],
 
                    [[.air, .postItWall, .bedL, .bedR, .log],
                     [.air, .shelf, .air, .air, .air],

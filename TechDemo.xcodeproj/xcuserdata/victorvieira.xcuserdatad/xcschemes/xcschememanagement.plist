@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TechDemo-iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>TechDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A32BB7281E55F84F00971762</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A32BB7411E55F84F00971762</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A32BB74C1E55F85000971762</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A3E4EDB01E48D9C200DBE129</key>
 		<dict>
 			<key>primary</key>
