@@ -235,26 +235,3 @@ class IsometricGameScene: SKScene{
     }
 
 }
-
-
-//        if(tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x] != nil){
-//
-//            tileAtual = (tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture)!
-//
-//        if(self.tileAtual?.description == SKTileNode.button.texture?.description){
-//
-//            tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture = SKTileNode.buttonActive.texture
-//
-//            tileVerificarButton = SKTileNode.buttonActive.texture
-//
-//            print("Porta Aberta")
-//
-//           }else if(tileVerificarButton?.description == SKTileNode.buttonActive.texture?.description){
-//
-//            tileVerificarButton = SKTileNode.button.texture
-//
-//            print("Porta Fechada")
-//
-//           }
-//
-//        }

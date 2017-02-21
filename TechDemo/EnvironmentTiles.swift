@@ -103,7 +103,7 @@ extension SKTileableNode{
     static var trash: SKInteractiveNode{
         get{
             let texture = SKTexture.init(imageNamed: "trashCan")
-            return SKInteractiveNode.init(spriteTexture: texture,
+            return SKInteractiveNode.init(textures: [.inactive: texture],
                                           tileDepth: 0,
                                           tileHeight: .fullHeight)
             
@@ -111,9 +111,9 @@ extension SKTileableNode{
     }
     
     static var button: SKInteractiveNode{
-        get{
+        get{ 
             let texture = SKTexture.init(imageNamed: "button")
-            return SKInteractiveNode.init(spriteTexture: texture,
+            return SKInteractiveNode.init(textures: [.inactive: texture],
                                           tileDepth: 0,
                                           tileHeight: .fullHeight)
             
