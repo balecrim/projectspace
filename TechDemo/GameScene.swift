@@ -48,7 +48,7 @@ class GameScene: IsometricGameScene {
         
         tileSet = [[[.ground, .ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .ground, .button, .ground],
+                    [.ground, .ground, .ground, .ground, .ground],
                     [.ground, .ground, .button, .ground, .ground]],
 
                    [[.air, .postItWall, .bedL, .bedR, .log],

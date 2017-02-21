@@ -171,7 +171,7 @@ class SKInteractiveNode: SKTileNode{
         }
 
         //run custom operator...
-        self.vv?()
+//        self.vv?()
 
     }
     
