@@ -478,7 +478,7 @@
 				TargetAttributes = {
 					A32BB7281E55F84F00971762 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = TE344W93RC;
+						DevelopmentTeam = GJ455B989X;
 						ProvisioningStyle = Automatic;
 					};
 					A32BB7411E55F84F00971762 = {
@@ -725,7 +725,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TE344W93RC;
+				DEVELOPMENT_TEAM = GJ455B989X;
 				INFOPLIST_FILE = "TechDemo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -742,7 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TE344W93RC;
+				DEVELOPMENT_TEAM = GJ455B989X;
 				INFOPLIST_FILE = "TechDemo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

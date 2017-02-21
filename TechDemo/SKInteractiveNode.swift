@@ -223,6 +223,7 @@ class SKInteractiveNode: SKTileNode{
                 
                 if self.isAccessible{
                     DispatchQueue.main.async {
+                        
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                             self.run(moveAction, completion: {
                                 self.isAccessible = false
