@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
         
     }
     
-    @IBAction func selectPressed(_ sender: Any) {
+    @IBAction func selectPressed() {
         let gScene = self.scene as! GameScene
         if let character = gScene.character{
             gScene.characterSelect(near: character)
@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
     }
     
     // MARK: Tap events
-    func selectButton(){
+    @IBAction func selectButton(){
         print("select")
     }
     
@@ -78,19 +78,19 @@ class GameViewController: UIViewController {
     }
 
     
-    func up(){
+    @IBAction func up(){
         move(on: .up)
     }
     
-    func down(){
+    @IBAction func down(){
         move(on: .down)
     }
     
-    func left(){
+    @IBAction func left(){
         move(on: .left)
     }
     
-    func right(){
+    @IBAction func right(){
         move(on: .right)
     }
     

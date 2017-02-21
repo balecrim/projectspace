@@ -61,29 +61,8 @@ class IsometricGameScene: SKScene{
     ///   - onLayer: the layer which it should be placed on.
     
     func placeIsometricTile(tile: SKTileableNode, atPosition position: CGPoint, onLayer: Int) {
-        
-        //calculating placement point for the character, then beating it into our isometric grid.
-        var point: CGPoint
-        
-        switch tile.height{
-        case .halfHeight:
-             point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
-                             y: -((position.y * CGFloat(tile.frame.height / 2)))).isometric
-            break
-        case .doubleHeight:
-            point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
-                            y: -((position.y * CGFloat(tile.frame.height / 3)))).isometric
-            break
-            
-        case .fullHeight:
-            point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
-                            y: -((position.y * CGFloat(tile.frame.height / 2)))).isometric
-            
-            
-        }
 
-        //displacing point on the Y axis based on its layer
-        point = point - CGPoint(x: 0, y: CGFloat((-onLayer * (tileSize.height / 2))))
+        let point = calculatePoint(for: tile, atPosition: position, onLayer: onLayer)
 
         //setting up character
         tile.position = point
@@ -100,6 +79,33 @@ class IsometricGameScene: SKScene{
         tile.isPlaced = true
         
         isometricView.addChild(tile)
+    }
+    
+    func calculatePoint(for tile: SKTileableNode, atPosition position: CGPoint, onLayer: Int) -> CGPoint{
+        //calculating placement point for the character, then beating it into our isometric grid.
+        var point: CGPoint
+        
+        switch tile.height{
+        case .halfHeight:
+            point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
+                            y: -((position.y * CGFloat(tile.frame.height / 2)))).isometric
+            break
+        case .doubleHeight:
+            point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
+                            y: -((position.y * CGFloat(tile.frame.height / 3)))).isometric
+            break
+            
+        case .fullHeight:
+            point = CGPoint(x: (position.x * CGFloat(tile.frame.width / 2)),
+                            y: -((position.y * CGFloat(tile.frame.height / 2)))).isometric
+            
+            
+        }
+        
+        //displacing point on the Y axis based on its layer
+        point = point - CGPoint(x: 0, y: CGFloat((-onLayer * (tileSize.height / 2))))
+
+        return point
     }
     
     /// Renders an isometric view based on a tileSet.
@@ -178,12 +184,16 @@ class IsometricGameScene: SKScene{
 
                         //moving character in the scene
                         DispatchQueue.main.async {
-//                            character.zPosition = CGFloat(destinationPosition.x + destinationPosition.y + destinationPosition.z)
-
-                            let movementAction = SKAction.move(to: destination.position, duration: 0.25)
+                            
+                            //FIXME: Character is having problems transitioning between layers.
+                            //character.zPosition = CGFloat(destinationPosition.x + destinationPosition.y + destinationPosition.z)
+                            
+                            let destinationPoint = self.calculatePoint(for: destination, atPosition: CGPoint(x: destinationPosition.x, y: destinationPosition.y), onLayer: destinationPosition.z)
+                            
+                            let movementAction = SKAction.move(to: destinationPoint, duration: 0.25)
                             character.run(movementAction)
                             
-                            self.nextCameraPosition = destination.position
+                            self.nextCameraPosition = destinationPoint
                             
                     }
                 }
@@ -191,7 +201,7 @@ class IsometricGameScene: SKScene{
         
         }
     }
-        
+    
     func characterSelect(near tile: SKCharacterNode){
         //in case there's something that is already selected...
         if activeTiles.count > 0{

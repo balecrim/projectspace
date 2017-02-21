@@ -48,6 +48,16 @@ extension SKTileableNode{
         }
     }
     
+    static var hardair: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "transparent",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .fullHeight)
+        }
+    }
+
+    
     static var closet: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "isocloset",

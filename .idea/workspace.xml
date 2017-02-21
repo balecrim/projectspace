@@ -2,15 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9e1833-c195-4895-8a86-c0f5f33d8ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/NotificationIdentifiers.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/East.imageset/East.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/East.imageset/East@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/East.imageset/East@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/North.imageset/North.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/North.imageset/North@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/North.imageset/North@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/Select.imageset/Select.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/Select.imageset/Select@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/Select.imageset/Select@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/South.imageset/South.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/South.imageset/South@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/South.imageset/South@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/West.imageset/West.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/West.imageset/West@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/West.imageset/West@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/door.imageset/Ativo 29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HallScene.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/East.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/North.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/Select.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/South.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Controller/West.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TechDemo/Assets.xcassets/Tiles - Base Tiles/door.imageset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo-iOS/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/TechDemo-iOS/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo-iOS/GameViewController.swift" afterPath="$PROJECT_DIR$/TechDemo-iOS/GameViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/TechDemo.xcodeproj/xcuserdata/bernardoalecrim.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift" afterPath="$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/GameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/GameScene.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" afterPath="$PROJECT_DIR$/TechDemo/IsometricGameScene.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TechDemo/SKTileableNode.swift" afterPath="$PROJECT_DIR$/TechDemo/SKTileableNode.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,9 +66,11 @@
             <entry file="file://$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="2761">
-                  <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+                  <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
                   <folding>
                     <element signature="e#155#172#0" expanded="true" />
+                    <marker date="1487651017000" expanded="true" signature="246:8598" ph="{...}" />
+                    <marker date="1487651017000" expanded="true" signature="388:445" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -54,9 +79,12 @@
           <file leaf-file-name="IsometricGameScene.swift" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1215">
-                  <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-                  <folding />
+                <state relative-caret-position="1515">
+                  <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+                  <folding>
+                    <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+                    <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -75,7 +103,7 @@
             <entry file="file://$PROJECT_DIR$/TechDemo/SKTileableNode.swift">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-30">
-                  <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+                  <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
                   <folding>
                     <element signature="e#111#128#0" expanded="true" />
                   </folding>
@@ -101,9 +129,9 @@
             <entry file="file://$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1125">
-                  <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+                  <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                   <folding>
-                    <marker date="1487644938000" expanded="true" signature="214:3269" ph="{...}" />
+                    <marker date="1487649565000" expanded="true" signature="214:3565" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -345,19 +373,19 @@
       <workItem from="1487087238749" duration="1200000" />
       <workItem from="1487181582827" duration="574000" />
       <workItem from="1487192023241" duration="16000" />
-      <workItem from="1487624419452" duration="4463000" />
+      <workItem from="1487624419452" duration="4464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21241000" />
+    <option name="totallyTimeSpent" value="21242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-101" y="-1058" width="1920" height="1058" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -405,6 +433,8 @@
           <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
           <folding>
             <element signature="e#155#172#0" expanded="true" />
+            <marker date="1487651017000" expanded="true" signature="246:8598" ph="{...}" />
+            <marker date="1487651017000" expanded="true" signature="388:445" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -467,7 +497,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -510,7 +543,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -534,7 +570,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -648,7 +687,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -691,7 +733,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +785,9 @@
     <entry file="file://$PROJECT_DIR$/TechDemo/EnvironmentTiles.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <marker date="1487644938000" expanded="true" signature="214:3269" ph="{...}" />
+            <marker date="1487649565000" expanded="true" signature="214:3565" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -765,16 +810,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TechDemo/IsometricGameScene.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="1515">
+          <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+          <folding>
+            <marker date="1487650071000" expanded="true" signature="179:8402" ph="{...}" />
+            <marker date="1487650071000" expanded="true" signature="1548:1550" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TechDemo/SKTileableNode.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
             <element signature="e#111#128#0" expanded="true" />
           </folding>
@@ -784,9 +832,11 @@
     <entry file="file://$PROJECT_DIR$/TechDemo/SKInteractiveNode.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2761">
-          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
           <folding>
             <element signature="e#155#172#0" expanded="true" />
+            <marker date="1487651017000" expanded="true" signature="246:8598" ph="{...}" />
+            <marker date="1487651017000" expanded="true" signature="388:445" ph="{...}" />
           </folding>
         </state>
       </provider>

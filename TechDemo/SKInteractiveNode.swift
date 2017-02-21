@@ -21,6 +21,7 @@ class SKInteractiveNode: SKTileNode{
     enum InteractionType{
         case transportable
         case animatable
+        case door
     }
 
     var interactionType: InteractionType = .transportable
@@ -177,9 +178,28 @@ class SKInteractiveNode: SKTileNode{
                 let appearAction = SKAction.fadeAlpha(to: 0.5, duration: 0.4)
                 self.secondaryNode?.run(appearAction)
             }
+        } else if self.interactionType == .door{
+            if let scene = self.scene as? IsometricGameScene{
+                
+                //FIXME: Move calculatePoint to the tile context, instead of the scene context.
+                
+                let newPoint = scene.calculatePoint(for: self,
+                                                    atPosition: CGPoint(x: self.gridPosition.x, y: self.gridPosition.y + 1),
+                                                    onLayer: self.gridPosition.z)
+                
+                let moveAction = SKAction.move(to: newPoint, duration: 0.4)
+                
+                DispatchQueue.main.async {
+                    self.run(moveAction, completion: { 
+                        self.isAccessible = true
+                    })
+                }
+
+            }
+
         }
 
-        //run custom operator...
+        ///run custom operator...
         self.activateAction?()
 
     }
@@ -194,6 +214,24 @@ class SKInteractiveNode: SKTileNode{
                 let appearAction = SKAction.fadeAlpha(to: 0, duration: 0.4)
                 self.secondaryNode?.run(appearAction)
             }
+        } else if self.interactionType == .door{
+            if let scene = self.scene as? IsometricGameScene{
+                let newPoint = scene.calculatePoint(for: self,
+                                                    atPosition: CGPoint(x: self.gridPosition.x, y: self.gridPosition.y),
+                                                    onLayer: self.gridPosition.z)
+                let moveAction = SKAction.move(to: newPoint, duration: 0.4)
+                
+                DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                        self.run(moveAction, completion: {
+                            self.isAccessible = false
+                            
+                        })
+                    })
+                }
+
+            }
+            
         }
 
         ///run custom operator...

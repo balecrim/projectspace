@@ -1,17 +1,15 @@
 //
-//  GameScene.swift
+//  HallScene.swift
 //  TechDemo
 //
-//  Created by Bernardo Alecrim on 2/6/17.
+//  Created by Bernardo Alecrim on 2/21/17.
 //  Copyright © 2017 Bernardo Alecrim. All rights reserved.
 //
 
-import SpriteKit
-import GameplayKit
-
+import Foundation
 import SpriteKit
 
-class GameScene: IsometricGameScene {
+class HallScene: IsometricGameScene {
     
     var character: SKCharacterNode?
     var cam: SKCameraNode!
@@ -37,9 +35,9 @@ class GameScene: IsometricGameScene {
         camera = cam
         camera?.xScale = 0.5
         camera?.yScale = 0.5
-
+        
     }
-
+    
     
     override func didMove(to view: SKView) {
         
@@ -58,46 +56,30 @@ class GameScene: IsometricGameScene {
                                             tileDepth: 0,
                                             tileHeight: .fullHeight,
                                             interactionType: .animatable,
-                                            activateAction: { 
+                                            activateAction: {
                                                 door.activate()
-                                            },
+        },
                                             deactivateAction: {
                                                 door.deactivate()
-                                            })
+        })
         
         let transitionTextures: [SKInteractiveNode.TileState : SKTexture] =
             [.inactive: SKTexture.init(imageNamed: "isocube"),
              .interacting: SKTexture.init(imageNamed: "isocube")]
-        
-        let transition = SKTransition.fade(with: UIColor.black, duration: 1)
-        let newScene = HallScene.init(size: self.size)
-        
-        
-        
-        let transitionButton = SKInteractiveNode.init(textures: transitionTextures,
-                                                      tileDepth: 0,
-                                                      tileHeight: .fullHeight,
-                                                      interactionType: .animatable,
-                                                      activateAction: {
-                                                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4, execute: {
-                                                                self.view?.presentScene(newScene,
-                                                                                        transition: transition)
-                                                        })
-                                                      })
         
         
         
         tileSet = [[[.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground],
-                    [transitionButton, button, .ground, .ground]],
-
+                    [.ground, button, .ground, .ground]],
+                   
                    [[.postItWall, .bedL, .bedR, .log],
                     [.shelf, .air, .air, .air],
                     [.closet, .air, .air, .air],
                     [ door, .air, .air, .trash],
                     [.hardair, .hardair, .hardair, .hardair]]]
-
+        
         
         super.didMove(to: view)
         
@@ -105,11 +87,9 @@ class GameScene: IsometricGameScene {
         
         placeIsometricTile(tile: character!, atPosition: CGPoint(x: 2, y:1), onLayer: 1)
         character?.zPosition = 100
-        door.zPosition = 101
         
     }
-
-
-
+    
+    
+    
 }
-
