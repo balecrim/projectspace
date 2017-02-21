@@ -95,8 +95,10 @@ class IsometricGameScene: SKScene{
             oldTile.removeFromParent()
         }
         
-        tile.zPosition = CGFloat(Int(position.x) + onLayer)
+        tile.zPosition = CGFloat(Int(position.x) + Int(position.y) + onLayer)
 
+        tile.isPlaced = true
+        
         isometricView.addChild(tile)
     }
     
@@ -120,17 +122,6 @@ class IsometricGameScene: SKScene{
         }
     }
     
-    func getTileForPositionButton(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
-        
-        if(tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture?.description == SKTileNode.button.texture?.description){
-            tileSet[safe: pos.z-1]?[safe: pos.y]?[safe: pos.x]?.texture = SKTexture(image: UIImage(named: "buttonActive")!)
-            return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
-        }else{
-            
-            return nil
-        }
-        
-    }
     
     func getTileForPosition(at pos: (x: Int, y: Int, z: Int)) -> SKTileableNode?{
         return tileSet[safe: pos.z]?[safe: pos.y]?[safe: pos.x]
@@ -174,11 +165,6 @@ class IsometricGameScene: SKScene{
             }
             
             ///Phase 3: if there's an accessible tile in front of it, actually move character...
-            if(self.getTileForPositionButton(at: character.neighbourPosition(for: direction)) == nil){
-                
-            }else{
-                
-            }
             if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
                     //print(destination.isAccessible)
                     if (destination.isAccessible){
@@ -192,7 +178,8 @@ class IsometricGameScene: SKScene{
 
                         //moving character in the scene
                         DispatchQueue.main.async {
-                            
+//                            character.zPosition = CGFloat(destinationPosition.x + destinationPosition.y + destinationPosition.z)
+
                             let movementAction = SKAction.move(to: destination.position, duration: 0.25)
                             character.run(movementAction)
                             

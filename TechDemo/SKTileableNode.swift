@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 import SpriteKit
 
 class SKTileableNode: SKSpriteNode {
@@ -15,7 +16,27 @@ class SKTileableNode: SKSpriteNode {
     }
 
     var height: TileHeight = .fullHeight
-    var gridPosition: (x: Int, y: Int, z: Int) = (x: 0, y: 0, z: 0)
+
+    var isPlaced: Bool = false
+    
+    fileprivate var gridStorage: (x: Int, y: Int, z: Int) = (x: 0, y: 0, z: 0)
+
+    var gridPosition: (x: Int, y: Int, z: Int){
+        get{
+            return gridStorage
+        }
+        set{
+            gridStorage = newValue
+            
+            if isPlaced{
+                let notifName = NSNotification.Name.init(rawValue: NotificationIdentifiers.tilePositionChanged.rawValue)
+                NotificationCenter.default.post(name: notifName,
+                                                object: self,
+                                                userInfo: ["newPosition" : newValue])
+            }
+        }
+
+    }
     
     init(texture: SKTexture?, color: UIColor, size: CGSize, height: TileHeight = .fullHeight){
         self.height = height

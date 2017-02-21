@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A32AB0281E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
 		A32AB0291E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
+		A32AB02B1E5BD64500C1EB0E /* NotificationIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */; };
+		A32AB02C1E5BD69E00C1EB0E /* NotificationIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */; };
 		A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */; };
 		A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB72B1E55F84F00971762 /* AppDelegate.swift */; };
 		A32BB7341E55F84F00971762 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7331E55F84F00971762 /* GameViewController.swift */; };
@@ -80,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		A32AB0271E5B766800C1EB0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TechDemo/Assets.xcassets; sourceTree = "<group>"; };
+		A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationIdentifiers.swift; sourceTree = "<group>"; };
 		A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTiles.swift; sourceTree = "<group>"; };
 		A32BB7291E55F84F00971762 /* TechDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BB72B1E55F84F00971762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -340,6 +343,7 @@
 		A3EB55E41E5368B70047792E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */,
 			);
 			name = Resources;
 			path = TechDemo;
@@ -590,6 +594,7 @@
 				A363BD021E5649E80084A708 /* SKInteractiveNode.swift in Sources */,
 				A32BB7641E55F96400971762 /* SKTileableNode.swift in Sources */,
 				A32BB7741E55FC8700971762 /* GameScene.swift in Sources */,
+				A32AB02C1E5BD69E00C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */,
 				A32BB7621E55F95D00971762 /* EnvironmentTiles.swift in Sources */,
 				A32BB7631E55F96400971762 /* SKTileNode.swift in Sources */,
@@ -625,6 +630,7 @@
 				A363BD5E1E5792CD0084A708 /* GameViewController.swift in Sources */,
 				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
 				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
+				A32AB02B1E5BD64500C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */,
 				A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */,
 				A363BD011E563A790084A708 /* SKInteractiveNode.swift in Sources */,

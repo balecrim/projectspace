@@ -33,7 +33,9 @@ class SKInteractiveNode: SKTileNode{
         }
         set{
             DispatchQueue.main.async{
-                self.texture = self.textureStorage[newValue]
+                if self.interactionType == .animatable{
+                    self.texture = self.textureStorage[newValue]
+                }
             }
             self.stateStorage = newValue
         }
@@ -47,7 +49,6 @@ class SKInteractiveNode: SKTileNode{
 
     var activateAction: (() -> ())?
     var deactivateAction: (() -> ())?
-
     
     init(textures: [TileState : SKTexture] = [.inactive : SKTexture.init(imageNamed: "iso_ground")],
          tileDepth: Int = 0,
@@ -56,9 +57,6 @@ class SKInteractiveNode: SKTileNode{
          activateAction: @escaping (() -> ()) = {_ in},
          deactivateAction: @escaping (() -> ()) = {_ in}){
         
-        //HACK HACK HACK
-        //TODO: Reimplement this by calculating a size multiplier from both the texture and the baseSize
-        //instead of just dividing everyone by 2 for @2x.
 
         self.textureStorage = textures
         self.interactionType = interactionType
@@ -72,6 +70,10 @@ class SKInteractiveNode: SKTileNode{
 
                 let childSize = childTexture.size()
 
+                //HACK HACK HACK
+                //TODO: Reimplement this by calculating a size multiplier from both the texture and the baseSize
+                //instead of just dividing everyone by 2 for @2x.
+                
                 secondaryNode = SKShapeNode.init(ellipseOf: CGSize(width: childSize.width / 2,
                         height: (childSize.height / 4)))
                 secondaryNode?.strokeColor = UIColor.clear
@@ -135,10 +137,17 @@ class SKInteractiveNode: SKTileNode{
                     tileDepth: tileDepth,
                     accessible: false,
                     tileHeight: tileHeight)
-
+            
 
         }
-
+        
+        let identifier = Notification.Name.init(rawValue: NotificationIdentifiers.tilePositionChanged.rawValue)
+        NotificationCenter.default.addObserver(forName: identifier,
+                                               object: nil,
+                                               queue: nil) { (notification) in
+                                                self.handleNotification(notification)
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -171,7 +180,7 @@ class SKInteractiveNode: SKTileNode{
         }
 
         //run custom operator...
-        self.vv?()
+        self.activateAction?()
 
     }
     
@@ -189,6 +198,18 @@ class SKInteractiveNode: SKTileNode{
 
         ///run custom operator...
         self.deactivateAction?()
+    }
+    
+    func handleNotification(_ notification: Notification){
+        if let newPosition = notification.userInfo?["newPosition"] as? (x: Int, y: Int, z: Int){
+            if self.abovePosition() == newPosition{
+                self.currentState = .interacting
+                activateAction?()
+            } else{
+                self.currentState = .inactive
+                deactivateAction?()
+            }
+        }
     }
 
     func hoverOffset() -> CGFloat{

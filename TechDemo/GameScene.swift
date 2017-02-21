@@ -44,12 +44,28 @@ class GameScene: IsometricGameScene {
     override func didMove(to view: SKView) {
         
         character = SKCharacterNode.defaultChar
-        let trash = SKTileableNode.trash
+        
+        
+        let buttonTextures: [SKInteractiveNode.TileState: SKTexture] =
+            [.inactive: SKTexture.init(imageNamed: "button"),
+             .interacting: SKTexture.init(imageNamed: "buttonActive")]
+        
+        let button = SKInteractiveNode.init(textures: buttonTextures,
+                                            tileDepth: 0,
+                                            tileHeight: .fullHeight,
+                                            interactionType: .animatable,
+                                            activateAction: { 
+                                                //door.activate()
+                                            },
+                                            deactivateAction: {
+                                                //door.deactivate()
+                                            })
+        
         
         tileSet = [[[.ground, .ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground, .ground],
                     [.ground, .ground, .ground, .ground, .ground],
-                    [.ground, .ground, .button, .ground, .ground]],
+                    [.ground, .ground, button, .ground, .ground]],
 
                    [[.air, .postItWall, .bedL, .bedR, .log],
                     [.air, .shelf, .air, .air, .air],
@@ -64,7 +80,6 @@ class GameScene: IsometricGameScene {
         placeIsometricTile(tile: character!, atPosition: CGPoint(x: 2, y:1), onLayer: 1)
         character?.zPosition = 100
         
-//        trash.activate()
     }
 
 
