@@ -11,40 +11,11 @@ import GameplayKit
 
 import SpriteKit
 
-class GameScene: IsometricGameScene {
-    
-    var character: SKCharacterNode?
-    var cam: SKCameraNode!
-    
-    override init(size: CGSize) {
-        super.init(size: size)
-        cam = SKCameraNode.init()
-        camera = cam
-        
-        #if os(tvOS)
-            camera?.xScale = 0.5
-            camera?.yScale = 0.5
-        #elseif os(iOS)
-            camera?.xScale = 1
-            camera?.yScale = 1
-        #endif
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        cam = SKCameraNode.init()
-        camera = cam
-        camera?.xScale = 0.5
-        camera?.yScale = 0.5
-
-    }
-
+class RoomScene: BaseGameScene {
     
     override func didMove(to view: SKView) {
         
         character = SKCharacterNode.defaultChar
-        
         
         let buttonTextures: [SKInteractiveNode.TileState: SKTexture] =
             [.inactive: SKTexture.init(imageNamed: "button"),
@@ -100,6 +71,7 @@ class GameScene: IsometricGameScene {
 
         
         super.didMove(to: view)
+        self.name = "roomScene"
         
         scene?.addChild(cam)
         
