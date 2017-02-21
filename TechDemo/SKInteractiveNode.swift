@@ -21,6 +21,7 @@ class SKInteractiveNode: SKTileNode{
     enum InteractionType{
         case transportable
         case animatable
+        case door
     }
 
     var interactionType: InteractionType = .transportable
@@ -33,7 +34,9 @@ class SKInteractiveNode: SKTileNode{
         }
         set{
             DispatchQueue.main.async{
-                self.texture = self.textureStorage[newValue]
+                if self.interactionType == .animatable{
+                    self.texture = self.textureStorage[newValue]
+                }
             }
             self.stateStorage = newValue
         }
@@ -47,7 +50,6 @@ class SKInteractiveNode: SKTileNode{
 
     var activateAction: (() -> ())?
     var deactivateAction: (() -> ())?
-
     
     init(textures: [TileState : SKTexture] = [.inactive : SKTexture.init(imageNamed: "iso_ground")],
          tileDepth: Int = 0,
@@ -56,9 +58,6 @@ class SKInteractiveNode: SKTileNode{
          activateAction: @escaping (() -> ()) = {_ in},
          deactivateAction: @escaping (() -> ()) = {_ in}){
         
-        //HACK HACK HACK
-        //TODO: Reimplement this by calculating a size multiplier from both the texture and the baseSize
-        //instead of just dividing everyone by 2 for @2x.
 
         self.textureStorage = textures
         self.interactionType = interactionType
@@ -72,6 +71,10 @@ class SKInteractiveNode: SKTileNode{
 
                 let childSize = childTexture.size()
 
+                //HACK HACK HACK
+                //TODO: Reimplement this by calculating a size multiplier from both the texture and the baseSize
+                //instead of just dividing everyone by 2 for @2x.
+                
                 secondaryNode = SKShapeNode.init(ellipseOf: CGSize(width: childSize.width / 2,
                         height: (childSize.height / 4)))
                 secondaryNode?.strokeColor = UIColor.clear
@@ -135,10 +138,17 @@ class SKInteractiveNode: SKTileNode{
                     tileDepth: tileDepth,
                     accessible: false,
                     tileHeight: tileHeight)
-
+            
 
         }
-
+        
+        let identifier = Notification.Name.init(rawValue: NotificationIdentifiers.tilePositionChanged.rawValue)
+        NotificationCenter.default.addObserver(forName: identifier,
+                                               object: nil,
+                                               queue: nil) { (notification) in
+                                                self.handleNotification(notification)
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -168,10 +178,29 @@ class SKInteractiveNode: SKTileNode{
                 let appearAction = SKAction.fadeAlpha(to: 0.5, duration: 0.4)
                 self.secondaryNode?.run(appearAction)
             }
+        } else if self.interactionType == .door{
+            if let scene = self.scene as? IsometricGameScene{
+                
+                //FIXME: Move calculatePoint to the tile context, instead of the scene context.
+                
+                let newPoint = scene.calculatePoint(for: self,
+                                                    atPosition: CGPoint(x: self.gridPosition.x, y: self.gridPosition.y + 1),
+                                                    onLayer: self.gridPosition.z)
+                
+                let moveAction = SKAction.move(to: newPoint, duration: 0.4)
+                
+                DispatchQueue.main.async {
+                    self.run(moveAction, completion: { 
+                        self.isAccessible = true
+                    })
+                }
+
+            }
+
         }
 
-        //run custom operator...
-//        self.vv?()
+        ///run custom operator...
+        self.activateAction?()
 
     }
     
@@ -185,10 +214,42 @@ class SKInteractiveNode: SKTileNode{
                 let appearAction = SKAction.fadeAlpha(to: 0, duration: 0.4)
                 self.secondaryNode?.run(appearAction)
             }
+        } else if self.interactionType == .door{
+            if let scene = self.scene as? IsometricGameScene{
+                let newPoint = scene.calculatePoint(for: self,
+                                                    atPosition: CGPoint(x: self.gridPosition.x, y: self.gridPosition.y),
+                                                    onLayer: self.gridPosition.z)
+                let moveAction = SKAction.move(to: newPoint, duration: 0.4)
+                
+                if self.isAccessible{
+                    DispatchQueue.main.async {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                            self.run(moveAction, completion: {
+                                self.isAccessible = false
+                                
+                            })
+                        })
+                    }
+
+                }
+            }
+            
         }
 
         ///run custom operator...
         self.deactivateAction?()
+    }
+    
+    func handleNotification(_ notification: Notification){
+        if let newPosition = notification.userInfo?["newPosition"] as? (x: Int, y: Int, z: Int){
+            if self.abovePosition() == newPosition{
+                self.currentState = .interacting
+                activateAction?()
+            } else{
+                self.currentState = .inactive
+                deactivateAction?()
+            }
+        }
     }
 
     func hoverOffset() -> CGFloat{

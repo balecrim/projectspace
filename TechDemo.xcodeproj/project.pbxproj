@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A32AB0281E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
 		A32AB0291E5B766800C1EB0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32AB0271E5B766800C1EB0E /* Assets.xcassets */; };
+		A32AB02B1E5BD64500C1EB0E /* NotificationIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */; };
+		A32AB02C1E5BD69E00C1EB0E /* NotificationIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */; };
+		A32AB02E1E5BF66500C1EB0E /* HallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02D1E5BF66500C1EB0E /* HallScene.swift */; };
+		A32AB02F1E5BF6C100C1EB0E /* HallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32AB02D1E5BF66500C1EB0E /* HallScene.swift */; };
 		A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */; };
 		A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB72B1E55F84F00971762 /* AppDelegate.swift */; };
 		A32BB7341E55F84F00971762 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7331E55F84F00971762 /* GameViewController.swift */; };
@@ -27,14 +31,16 @@
 		A32BB76C1E55F98D00971762 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDE91E48DF9200DBE129 /* sprites.atlas */; };
 		A32BB76E1E55F99000971762 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */; };
 		A32BB7701E55FB8A00971762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A32BB76F1E55FB8A00971762 /* Assets.xcassets */; };
-		A32BB7741E55FC8700971762 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */; };
+		A32BB7741E55FC8700971762 /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* RoomScene.swift */; };
 		A363BD011E563A790084A708 /* SKInteractiveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363BD001E563A790084A708 /* SKInteractiveNode.swift */; };
 		A363BD021E5649E80084A708 /* SKInteractiveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363BD001E563A790084A708 /* SKInteractiveNode.swift */; };
 		A363BD5E1E5792CD0084A708 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7331E55F84F00971762 /* GameViewController.swift */; };
 		A39564E41E48E68E00E8795D /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39564E31E48E68E00E8795D /* Operators.swift */; };
+		A3CD08451E5C9FBF000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
+		A3CD08461E5C9FF5000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
 		A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */; };
 		A3E4EDBB1E48D9C200DBE129 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */; };
-		A3E4EDBD1E48D9C200DBE129 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */; };
+		A3E4EDBD1E48D9C200DBE129 /* RoomScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDBC1E48D9C200DBE129 /* RoomScene.swift */; };
 		A3E4EDC21E48D9C200DBE129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E4EDC01E48D9C200DBE129 /* Main.storyboard */; };
 		A3E4EDCF1E48D9C300DBE129 /* TechDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDCE1E48D9C300DBE129 /* TechDemoTests.swift */; };
 		A3E4EDDA1E48D9C300DBE129 /* TechDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDD91E48D9C300DBE129 /* TechDemoUITests.swift */; };
@@ -80,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		A32AB0271E5B766800C1EB0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TechDemo/Assets.xcassets; sourceTree = "<group>"; };
+		A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationIdentifiers.swift; sourceTree = "<group>"; };
+		A32AB02D1E5BF66500C1EB0E /* HallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HallScene.swift; sourceTree = "<group>"; };
 		A32BB7231E54DDC400971762 /* EnvironmentTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTiles.swift; sourceTree = "<group>"; };
 		A32BB7291E55F84F00971762 /* TechDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A32BB72B1E55F84F00971762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,10 +104,11 @@
 		A32BB76F1E55FB8A00971762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A363BD001E563A790084A708 /* SKInteractiveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKInteractiveNode.swift; sourceTree = "<group>"; };
 		A39564E31E48E68E00E8795D /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		A3E4EDB11E48D9C200DBE129 /* TechDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3E4EDBA1E48D9C200DBE129 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Game.xcassets; path = TechDemo/Game.xcassets; sourceTree = "<group>"; };
-		A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = TechDemo/GameScene.swift; sourceTree = "<group>"; };
+		A3E4EDBC1E48D9C200DBE129 /* RoomScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoomScene.swift; path = TechDemo/RoomScene.swift; sourceTree = "<group>"; };
 		A3E4EDC11E48D9C200DBE129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3E4EDC51E48D9C200DBE129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E4EDCA1E48D9C300DBE129 /* TechDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,7 +266,9 @@
 		A32BB7731E55FC8100971762 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A3E4EDBC1E48D9C200DBE129 /* GameScene.swift */,
+				A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */,
+				A3E4EDBC1E48D9C200DBE129 /* RoomScene.swift */,
+				A32AB02D1E5BF66500C1EB0E /* HallScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 		A3EB55E41E5368B70047792E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A32AB02A1E5BD64500C1EB0E /* NotificationIdentifiers.swift */,
 			);
 			name = Resources;
 			path = TechDemo;
@@ -584,12 +596,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32BB7651E55F96400971762 /* SKCharacterNode.swift in Sources */,
+				A32AB02F1E5BF6C100C1EB0E /* HallScene.swift in Sources */,
 				A32BB7671E55F96A00971762 /* CGPoint+IsometricConversion.swift in Sources */,
 				A32BB7341E55F84F00971762 /* GameViewController.swift in Sources */,
 				A32BB7611E55F95A00971762 /* IsometricGameScene.swift in Sources */,
 				A363BD021E5649E80084A708 /* SKInteractiveNode.swift in Sources */,
+				A3CD08461E5C9FF5000A0F2C /* BaseGameScene.swift in Sources */,
 				A32BB7641E55F96400971762 /* SKTileableNode.swift in Sources */,
-				A32BB7741E55FC8700971762 /* GameScene.swift in Sources */,
+				A32BB7741E55FC8700971762 /* RoomScene.swift in Sources */,
+				A32AB02C1E5BD69E00C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */,
 				A32BB7621E55F95D00971762 /* EnvironmentTiles.swift in Sources */,
 				A32BB7631E55F96400971762 /* SKTileNode.swift in Sources */,
@@ -618,13 +633,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3E4EDBD1E48D9C200DBE129 /* GameScene.swift in Sources */,
+				A3E4EDBD1E48D9C200DBE129 /* RoomScene.swift in Sources */,
+				A32AB02E1E5BF66500C1EB0E /* HallScene.swift in Sources */,
 				A39564E41E48E68E00E8795D /* Operators.swift in Sources */,
 				A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */,
 				F92CE9BBF515A71337D307AC /* IsometricGameScene.swift in Sources */,
 				A363BD5E1E5792CD0084A708 /* GameViewController.swift in Sources */,
+				A3CD08451E5C9FBF000A0F2C /* BaseGameScene.swift in Sources */,
 				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
 				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
+				A32AB02B1E5BD64500C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */,
 				A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */,
 				A363BD011E563A790084A708 /* SKInteractiveNode.swift in Sources */,

@@ -22,18 +22,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bth-l4-Eio">
-                                <rect key="frame" x="40" y="698" width="44" height="30"/>
-                                <state key="normal" title="Select"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="4om-on-DLg">
+                                <rect key="frame" x="55" y="529" width="184" height="184"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="BSc-yI-jQb">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj8-bJ-0Q5">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="ppo-6B-rWo"/>
+                                                    <constraint firstAttribute="height" constant="80" id="x6G-Lf-Ree"/>
+                                                </constraints>
+                                                <state key="normal" image="West"/>
+                                                <connections>
+                                                    <action selector="left" destination="BV1-FR-VrT" eventType="touchUpInside" id="2s4-oi-wbo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkU-cY-ixH">
+                                                <rect key="frame" x="104" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="SE5-KG-Mt4"/>
+                                                    <constraint firstAttribute="height" constant="80" id="f9G-wk-Moq"/>
+                                                </constraints>
+                                                <state key="normal" image="North"/>
+                                                <connections>
+                                                    <action selector="up" destination="BV1-FR-VrT" eventType="touchUpInside" id="ioV-tX-MBg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="3H7-bu-oU4">
+                                        <rect key="frame" x="0.0" y="104" width="184" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVc-rT-30K">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="4QW-kx-qTR"/>
+                                                    <constraint firstAttribute="height" constant="80" id="oZU-Bb-B1w"/>
+                                                </constraints>
+                                                <state key="normal" image="South"/>
+                                                <connections>
+                                                    <action selector="down" destination="BV1-FR-VrT" eventType="touchUpInside" id="wCG-xT-8SW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLX-bd-AaV">
+                                                <rect key="frame" x="104" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="1q9-4v-LG3"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="js1-0o-ap8"/>
+                                                    <constraint firstAttribute="height" constant="80" id="mUA-xU-6eR"/>
+                                                    <constraint firstAttribute="width" constant="80" id="tsh-f6-nRE"/>
+                                                </constraints>
+                                                <state key="normal" image="East"/>
+                                                <connections>
+                                                    <action selector="right" destination="BV1-FR-VrT" eventType="touchUpInside" id="XoC-zc-YSE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpa-h7-l8m">
+                                <rect key="frame" x="914" y="633" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TL2-qL-RH1"/>
+                                    <constraint firstAttribute="width" constant="80" id="yP5-N4-6Eb"/>
+                                </constraints>
+                                <state key="normal" image="Select"/>
                                 <connections>
-                                    <action selector="selectPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="x6r-4J-heo"/>
+                                    <action selector="selectPressed" destination="BV1-FR-VrT" eventType="touchUpInside" id="ifn-ax-Z3y"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="bth-l4-Eio" secondAttribute="bottom" constant="40" id="RyO-r0-6qR"/>
-                            <constraint firstItem="bth-l4-Eio" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="20" id="pQM-f0-N8w"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Qpa-h7-l8m" secondAttribute="bottom" constant="55" id="6Ib-Jw-bFx"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="4om-on-DLg" secondAttribute="bottom" constant="55" id="ISY-vb-uP4"/>
+                            <constraint firstItem="4om-on-DLg" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="35" id="aqV-n5-npg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qpa-h7-l8m" secondAttribute="trailing" constant="10" id="tJv-vW-mDK"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,4 +108,11 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="East" width="122" height="122"/>
+        <image name="North" width="122" height="122"/>
+        <image name="Select" width="122" height="122"/>
+        <image name="South" width="122" height="122"/>
+        <image name="West" width="122" height="122"/>
+    </resources>
 </document>

@@ -12,9 +12,6 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    var scene: SKScene?
-    var character: SKCharacterNode?
-    
     #if os(iOS)
         override var prefersStatusBarHidden: Bool{
             get{ return true }
@@ -56,16 +53,16 @@ class GameViewController: UIViewController {
         
     }
     
-    @IBAction func selectPressed(_ sender: Any) {
-        let gScene = self.scene as! GameScene
-        if let character = gScene.character{
-            gScene.characterSelect(near: character)
+    @IBAction func selectPressed() {
+        if let gScene = (self.view as? SKView)?.scene as? BaseGameScene{
+            if let character = gScene.character{
+                gScene.characterSelect(near: character)
+            }
         }
-
     }
     
     // MARK: Tap events
-    func selectButton(){
+    @IBAction func selectButton(){
         print("select")
     }
     
@@ -78,28 +75,30 @@ class GameViewController: UIViewController {
     }
 
     
-    func up(){
+    @IBAction func up(){
         move(on: .up)
     }
     
-    func down(){
+    @IBAction func down(){
         move(on: .down)
     }
     
-    func left(){
+    @IBAction func left(){
         move(on: .left)
     }
     
-    func right(){
+    @IBAction func right(){
         move(on: .right)
     }
     
     
     func move(on direction: MovementDirection){
-        
         DispatchQueue.main.async {
-            let gScene = self.scene as! GameScene
-            gScene.move(character: gScene.character!, on: direction)
+            if let gScene = (self.view as? SKView)?.scene as? BaseGameScene{
+                if let character = gScene.character{
+                    gScene.move(character: character, on: direction)
+                }
+            }
         }
 
     }
@@ -115,8 +114,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            let scene = GameScene.init(size: view.frame.size)
-            self.scene = scene
+            let scene = RoomScene.init(size: view.frame.size)
             // Set the scale mode to scale to fit the window
             scene.scaleMode = .aspectFill
             

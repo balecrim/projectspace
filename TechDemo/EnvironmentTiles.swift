@@ -48,6 +48,16 @@ extension SKTileableNode{
         }
     }
     
+    static var hardair: SKTileNode{
+        get{
+            return SKTileNode.init(spriteName: "transparent",
+                                   tileDepth: 0,
+                                   accessible: false,
+                                   tileHeight: .fullHeight)
+        }
+    }
+
+    
     static var closet: SKTileNode{
         get{
             return SKTileNode.init(spriteName: "isocloset",
@@ -110,15 +120,6 @@ extension SKTileableNode{
         }
     }
     
-    static var button: SKInteractiveNode{
-        get{ 
-            let texture = SKTexture.init(imageNamed: "button")
-            return SKInteractiveNode.init(textures: [.inactive: texture],
-                                          tileDepth: 0,
-                                          tileHeight: .fullHeight)
-            
-        }
-    }
     
     static var buttonActive: SKTileNode{
         get{
@@ -129,6 +130,5 @@ extension SKTileableNode{
             
         }
     }
-    
     
 }
