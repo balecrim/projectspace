@@ -221,15 +221,17 @@ class SKInteractiveNode: SKTileNode{
                                                     onLayer: self.gridPosition.z)
                 let moveAction = SKAction.move(to: newPoint, duration: 0.4)
                 
-                DispatchQueue.main.async {
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
-                        self.run(moveAction, completion: {
-                            self.isAccessible = false
-                            
+                if self.isAccessible{
+                    DispatchQueue.main.async {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                            self.run(moveAction, completion: {
+                                self.isAccessible = false
+                                
+                            })
                         })
-                    })
-                }
+                    }
 
+                }
             }
             
         }
