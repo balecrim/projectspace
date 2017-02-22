@@ -36,6 +36,8 @@
 		A363BD021E5649E80084A708 /* SKInteractiveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363BD001E563A790084A708 /* SKInteractiveNode.swift */; };
 		A363BD5E1E5792CD0084A708 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BB7331E55F84F00971762 /* GameViewController.swift */; };
 		A39564E41E48E68E00E8795D /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39564E31E48E68E00E8795D /* Operators.swift */; };
+		A3AB39C51E5D503D00320DEE /* SKBalloonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB39C41E5D503D00320DEE /* SKBalloonNode.swift */; };
+		A3AB39C61E5D503D00320DEE /* SKBalloonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB39C41E5D503D00320DEE /* SKBalloonNode.swift */; };
 		A3CD08451E5C9FBF000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
 		A3CD08461E5C9FF5000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
 		A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */; };
@@ -104,6 +106,7 @@
 		A32BB76F1E55FB8A00971762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A363BD001E563A790084A708 /* SKInteractiveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKInteractiveNode.swift; sourceTree = "<group>"; };
 		A39564E31E48E68E00E8795D /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		A3AB39C41E5D503D00320DEE /* SKBalloonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKBalloonNode.swift; sourceTree = "<group>"; };
 		A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameScene.swift; sourceTree = "<group>"; };
 		A3E4EDB11E48D9C200DBE129 /* TechDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F92CE3B23C43C47B50193657 /* IsometricGameScene.swift */,
+				A3AB39C71E5D506600320DEE /* Convenience Tiles */,
 				A3EB55E31E53688C0047792E /* Tile Support */,
 				A3EB55E01E53681E0047792E /* Extensions */,
 				A3EB55E41E5368B70047792E /* Resources */,
@@ -271,6 +275,14 @@
 				A32AB02D1E5BF66500C1EB0E /* HallScene.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		A3AB39C71E5D506600320DEE /* Convenience Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				A3AB39C41E5D503D00320DEE /* SKBalloonNode.swift */,
+			);
+			name = "Convenience Tiles";
 			sourceTree = "<group>";
 		};
 		A3E4EDA81E48D9C200DBE129 = {
@@ -339,8 +351,8 @@
 		A3EB55E31E53688C0047792E /* Tile Support */ = {
 			isa = PBXGroup;
 			children = (
-				A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */,
 				F92CE1B6D716160C0E15C0CB /* SKTileableNode.swift */,
+				A3EB55DA1E4CEFBD0047792E /* SKTileNode.swift */,
 				F92CE779EB56CD46C358EE40 /* SKCharacterNode.swift */,
 				A363BD001E563A790084A708 /* SKInteractiveNode.swift */,
 			);
@@ -478,7 +490,7 @@
 				TargetAttributes = {
 					A32BB7281E55F84F00971762 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GJ455B989X;
+						DevelopmentTeam = TE344W93RC;
 						ProvisioningStyle = Automatic;
 					};
 					A32BB7411E55F84F00971762 = {
@@ -604,6 +616,7 @@
 				A3CD08461E5C9FF5000A0F2C /* BaseGameScene.swift in Sources */,
 				A32BB7641E55F96400971762 /* SKTileableNode.swift in Sources */,
 				A32BB7741E55FC8700971762 /* RoomScene.swift in Sources */,
+				A3AB39C61E5D503D00320DEE /* SKBalloonNode.swift in Sources */,
 				A32AB02C1E5BD69E00C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				A32BB72C1E55F84F00971762 /* AppDelegate.swift in Sources */,
 				A32BB7621E55F95D00971762 /* EnvironmentTiles.swift in Sources */,
@@ -642,6 +655,7 @@
 				A3CD08451E5C9FBF000A0F2C /* BaseGameScene.swift in Sources */,
 				A3EB55DB1E4CEFBD0047792E /* SKTileNode.swift in Sources */,
 				F92CE8AD7D7951284F57A71A /* CGPoint+IsometricConversion.swift in Sources */,
+				A3AB39C51E5D503D00320DEE /* SKBalloonNode.swift in Sources */,
 				A32AB02B1E5BD64500C1EB0E /* NotificationIdentifiers.swift in Sources */,
 				F92CE12C901B3B44E4080BC3 /* SKTileableNode.swift in Sources */,
 				A32BB7241E54DDC400971762 /* EnvironmentTiles.swift in Sources */,
@@ -725,7 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GJ455B989X;
+				DEVELOPMENT_TEAM = TE344W93RC;
 				INFOPLIST_FILE = "TechDemo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -742,7 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GJ455B989X;
+				DEVELOPMENT_TEAM = TE344W93RC;
 				INFOPLIST_FILE = "TechDemo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
