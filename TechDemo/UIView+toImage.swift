@@ -1,5 +1,5 @@
-UI//
-//  File.swift
+//
+//  UIView+toImage.swift
 //  TechDemo
 //
 //  Created by Bernardo Alecrim on 2/21/17.
@@ -7,3 +7,18 @@ UI//
 //
 
 import Foundation
+import UIKit
+
+extension UIView {
+    public func toImage() -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+}
+
