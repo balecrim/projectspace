@@ -74,7 +74,7 @@ class SKBalloonNode: SKSpriteNode{
         label.text = text
         label.textColor = UIColor.white
         label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 3
+        label.numberOfLines = 4
         label.textAlignment = .center
 
         return label.toImage()
