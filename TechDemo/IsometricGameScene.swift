@@ -7,19 +7,21 @@ import Foundation
 import SpriteKit
 
 class IsometricGameScene: SKScene{
-
     let isometricView: SKSpriteNode
     
     let tileSize = (width:128, height:128)
 
     fileprivate var tileStorage: [[[SKTileableNode]]] = []
-   
+    //Position of button
+    var x,y,z: Int?
+    
     
     var tileSet: [[[SKTileableNode]]] = [[[]]]
     
     var activeTiles: [SKInteractiveNode] = []
     
     var nextCameraPosition: CGPoint?
+    
 
     // MARK: Initializers
 

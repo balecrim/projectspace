@@ -48,6 +48,8 @@ class SKTileNode: SKTileableNode{
 
     }
     
+    
+    
     init(color: UIColor = UIColor.clear,
          tileDepth: Int = 0,
          accessible: Bool = true,

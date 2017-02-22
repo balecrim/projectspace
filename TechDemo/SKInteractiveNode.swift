@@ -99,9 +99,9 @@ class SKInteractiveNode: SKTileNode{
 
                     self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
                     localChild.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-
+                    print(self.size.width)
                     localChild.position = CGPoint(x: (self.position.x + (self.size.width / 2)),
-                            y: (self.position.y + ((self.size.width / 10) * 3)))
+                            y: (self.position.y + ((localChild.size.height / 10) * 7)))
                     secondaryNode?.position = CGPoint(x: (self.position.x + (self.size.width / 2)),
                             y: (self.position.y + ((self.size.width / 10) * 2)))
 
@@ -112,7 +112,7 @@ class SKInteractiveNode: SKTileNode{
 
                     print(self.size)
                     print(self.anchorPoint)
-
+                    
                 } else {
 
                     print("Unrecoverable error at:", #file, #function, #line)
@@ -223,6 +223,7 @@ class SKInteractiveNode: SKTileNode{
                 
                 if self.isAccessible{
                     DispatchQueue.main.async {
+                        
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                             self.run(moveAction, completion: {
                                 self.isAccessible = false
