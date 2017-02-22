@@ -71,7 +71,8 @@ extension SKTileableNode{
                                                     "Hmm, how are the propulsors still running?",
                                                     "THEY'RE NOT.",
                                                     "I need to get to the reactor room ASAP!",
-                                                    "The emergency door at the end of the hallway should get me there."])
+                                                    "The emergency door at the end of the hallway should get me there."],
+                                   sound: "log")
         }
     }
     
@@ -81,7 +82,8 @@ extension SKTileableNode{
                                    tileDepth: 0,
                                    accessible: false,
                                    tileHeight: .doubleHeight,
-                                   tileInformation: ["This old room is also locked out."])
+                                   tileInformation: ["This old room is also locked out."],
+                                   sound: "btnON")
         }
     }
     
@@ -91,7 +93,8 @@ extension SKTileableNode{
                                    tileDepth: 0,
                                    accessible: false,
                                    tileHeight: .doubleHeight,
-                                   tileInformation: ["Julie's room is also locked."])
+                                   tileInformation: ["Julie's room is also locked."],
+                                   sound: "btnON")
         }
     }
     
@@ -103,7 +106,8 @@ extension SKTileableNode{
                                    tileHeight: .doubleHeight,
                                    tileInformation: ["Wait, I can't get back into my room!",
                                                      "I forgot my pocket protector and pen.",
-                                                     "Darn."])
+                                                     "Darn."],
+                                   sound: "btnON")
         }
     }
     
@@ -151,7 +155,8 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "isocloset",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   sound: "closet")
             
         }
     }
@@ -184,7 +189,8 @@ extension SKTileableNode{
                                    tileHeight: .doubleHeight,
                                    tileInformation:["Wait a second...",
                                                     "There's a bunch of mail here about an \"emergency\"",
-                                                    "What IS going on in here?"])
+                                                    "What IS going on in here?"],
+                                   sound: "log")
             
         }
     }
@@ -197,7 +203,8 @@ extension SKTileableNode{
                                    tileHeight: .doubleHeight,
                                    tileInformation:["\"Art of War\", \"The Martian\", \"Twilight\" "
                                                     + "and a bunch of random programming manuals.",
-                                                    "My book collection sure is odd."])
+                                                    "My book collection sure is odd."],
+                                   sound: "book")
             
         }
     }

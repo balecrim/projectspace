@@ -9,28 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TechDemo/SKInteractiveNode.swift"
-            timestampString = "509344655.801821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "deactivate()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SKBalloonNode.swift"
-            timestampString = "509438342.17949"
+            timestampString = "509469449.688891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "generateImage(for:frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioManager.swift"
@@ -51,34 +35,34 @@
             landmarkType = "13">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TechDemo_iOS.AudioManager.SoundType.init (rawValue : Swift.Int) -&gt; Swift.Optional&lt;TechDemo_iOS.AudioManager.SoundType&gt;"
+                  symbolName = "TechDemo_iOS.AudioManager.SoundType.init (rawValue : Swift.String) -&gt; Swift.Optional&lt;TechDemo_iOS.AudioManager.SoundType&gt;"
                   moduleName = "TechDemo-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bernardoalecrim/Developer/TechDemo/AudioManager.swift"
-                  timestampString = "509446460.961794"
+                  timestampString = "509475567.559703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "224">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TechDemo_iOS.AudioManager.SoundType.rawValue.getter : Swift.Int"
+                  symbolName = "TechDemo_iOS.AudioManager.SoundType.rawValue.getter : Swift.String"
                   moduleName = "TechDemo-iOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bernardoalecrim/Developer/TechDemo/AudioManager.swift"
-                  timestampString = "509446460.963196"
+                  timestampString = "509475567.56119"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "108">
                </Location>
             </Locations>
          </BreakpointContent>

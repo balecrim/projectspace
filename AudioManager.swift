@@ -11,108 +11,83 @@ import AVFoundation
 
 class AudioManager: NSObject{
     
-    enum SoundType: Int{
-        case background
-        case step
-        case bookcase
-        case buttonON
-        case buttonOFF
-        case closet
-        case door
-        case log
-        case trash
+    enum SoundType: String{
+        case background = "bg"
+        case step = "step"
+        case bookcase = "book"
+        case buttonON = "btnON"
+        case buttonOFF = "btnOFF"
+        case closet = "closet"
+        case door = "door"
+        case log = "log"
+        case trash = "trash"
+        
+        static let all = [background,
+                          step,
+                          bookcase,
+                          buttonON,
+                          buttonOFF,
+                          closet,
+                          door,
+                          log,
+                          trash]
     }
     
     
     //Singleton deifnition
     static let shared = AudioManager()
     
-    var bgAudio: AVAudioPlayer = try! AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "bg", ofType: "mp3")!)!)
-    
-//    var soundLibrary: [SoundType : AVAudioPlayer] = [
-//        .background = ,
-//        .step =       AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "step", ofType: "aac")!)!),
-//        .bookcase =   AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "bookcase", ofType: "aac")!)!),
-//        .buttonON =   AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "buttonON", ofType: "aac")!)!),
-//        .buttonOFF =  AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "buttonOFF", ofType: "aac")!)!),
-//        .closet =     AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "closet", ofType: "aac")!)!),
-//        .door =       AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "door", ofType: "aac")!)!),
-//        .log =        AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "log", ofType: "aac")!)!),
-//        .trash =      AVAudioPlayer.init(contentsOf: URL.init(string: Bundle.main.path(forResource: "trash", ofType: "aac")!)!)]
-//    
-    
-//    //Audio configs
-//    var musicOn: Bool{
-//        get{
-//            if let musicSetting = UserDefaults.standard.object(forKey: "com.drawrr.drawrrapp.musicOn") as? Bool{
-//                return musicSetting
-//            }
-//            else{
-//                return true
-//            }
-//        }
-//        set{
-//            UserDefaults.standard.set(newValue, forKey: "com.drawrr.drawrrapp.musicOn")
-//            DispatchQueue.global().async {
-//                self.updateBGSound()
-//            }
-//        }
-//    }
-//    
-//    var soundsOn: Bool{
-//        get{
-//            if let soundsSetting = UserDefaults.standard.object(forKey: "com.drawrr.drawrrapp.soundsOn") as? Bool{
-//                return soundsSetting
-//            }
-//            else{
-//                return true
-//            }
-//        }
-//        set{
-//            UserDefaults.standard.set(newValue, forKey: "com.drawrr.drawrrapp.soundsOn")
-//        }
-//    }
-//    
-//    var rumbleOn: Bool{
-//        get{
-//            if let rumbleSetting = UserDefaults.standard.object(forKey: "com.drawrr.drawrrapp.rumbleSetting") as? Bool{
-//                return rumbleSetting
-//            }
-//            else{
-//                return true
-//            }
-//        }
-//        set{
-//            UserDefaults.standard.set(newValue, forKey: "com.drawrr.drawrrapp.rumbleSetting")
-//        }
-//    }
-
+    var players: [SoundType : AVAudioPlayer?] = [:]
     
     private override init(){
         super.init()
         
-//        for file in currentFiles{
-//            let currentSound = try! AVAudioPlayer.init(contentsOf: URL.init(string: file)!)
-//            currentSound.numberOfLoops = 0
-//            currentSound.volume = 0.4
-//            
-//            if currentSounds != nil{
-//                currentSounds!.append(currentSound)
-//            } else{
-//                currentSounds = [AVAudioPlayer]()
-//                currentSounds!.append(currentSound)
-//            }
-//        }
-        
-        updateBGSound()
+        for sound in SoundType.all{
+            let file: String
+            
+            if sound == .background{
+                file = Bundle.main.path(forResource: sound.rawValue, ofType: "mp3")!
+            } else{
+                file = Bundle.main.path(forResource: sound.rawValue, ofType: "m4a")!
+
+            }
+            
+            let soundPlayer = try! AVAudioPlayer.init(contentsOf: URL.init(string: file)!)
+            players[sound] = soundPlayer
+        }
+
+        loop(sound: .background)
     }
 
     
-    func updateBGSound(){
-//        if musicOn{
-            bgAudio.numberOfLoops = -1
-            bgAudio.volume = 0.03
-            bgAudio.play()
+    func loop(sound: SoundType){
+        
+        if let player = players[sound]{
+            player?.numberOfLoops = -1
+            
+            #if os(tvOS)
+                player?.volume = 1
+            #elseif os(iOS)
+                player?.volume = 0.03
+            #endif
+
+            player?.play()
+        }
+
+    }
+    
+    func play(sound: SoundType){
+        if let player = players[sound]{
+            
+            #if os(tvOS)
+                player?.volume = 1
+            #elseif os(iOS)
+                player?.volume = 0.1
+            #endif
+            
+            player?.play()
+        }
+
     }
 
 }

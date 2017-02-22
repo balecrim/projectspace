@@ -190,13 +190,16 @@ class SKInteractiveNode: SKTileNode{
                 let moveAction = SKAction.move(to: newPoint, duration: 0.4)
                 
                 DispatchQueue.main.async {
-                    self.run(moveAction, completion: { 
+                    if let sound = AudioManager.SoundType(rawValue: "door"){
+                        AudioManager.shared.play(sound: sound)
+                    }
+
+                    self.run(moveAction, completion: {
                         self.isAccessible = true
                     })
                 }
 
             }
-
         }
 
         ///run custom operator...
@@ -225,6 +228,10 @@ class SKInteractiveNode: SKTileNode{
                     DispatchQueue.main.async {
                         
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                            if let sound = AudioManager.SoundType(rawValue: "door"){
+                                AudioManager.shared.play(sound: sound)
+                            }
+
                             self.run(moveAction, completion: {
                                 self.isAccessible = false
                                 
@@ -235,7 +242,12 @@ class SKInteractiveNode: SKTileNode{
                 }
             }
             
+        } else if self.interactionType == .animatable{ //aka, button.
+            if let sound = AudioManager.SoundType(rawValue: "btnOFF"){
+                AudioManager.shared.play(sound: sound)
+            }
         }
+
 
         ///run custom operator...
         self.deactivateAction?()
@@ -243,11 +255,23 @@ class SKInteractiveNode: SKTileNode{
     
     func handleNotification(_ notification: Notification){
         if let newPosition = notification.userInfo?["newPosition"] as? (x: Int, y: Int, z: Int){
-            if self.abovePosition() == newPosition{
+            if ((self.abovePosition() == newPosition) && (self.currentState == .inactive)){
                 self.currentState = .interacting
+                if self.interactionType == .animatable{ //aka, button.
+                    if let sound = AudioManager.SoundType(rawValue: "btnON"){
+                        AudioManager.shared.play(sound: sound)
+                    }
+                }
+
                 activateAction?()
-            } else{
+            } else if (self.currentState == .interacting){
                 self.currentState = .inactive
+                
+                if self.interactionType == .animatable{ //aka, button.
+                    if let sound = AudioManager.SoundType(rawValue: "btnOFF"){
+                        AudioManager.shared.play(sound: sound)
+                    }
+                }
                 deactivateAction?()
             }
         }

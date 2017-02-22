@@ -20,8 +20,8 @@ class BaseGameScene: IsometricGameScene{
         camera = cam
         
         #if os(tvOS)
-            camera?.xScale = 0.5
-            camera?.yScale = 0.5
+            camera?.xScale = 0.75
+            camera?.yScale = 0.75
         #elseif os(iOS)
             camera?.xScale = 1
             camera?.yScale = 1

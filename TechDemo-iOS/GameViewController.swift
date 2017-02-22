@@ -64,6 +64,7 @@ class GameViewController: UIViewController {
     // MARK: Tap events
     @IBAction func selectButton(){
         print("select")
+        selectPressed()
     }
     
     func playPause(){

@@ -15,6 +15,7 @@ class SKTileNode: SKTileableNode{
 
     var isAccessible: Bool = true
     var information: [String] = []
+    var soundID: String = ""
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,10 +25,13 @@ class SKTileNode: SKTileableNode{
          tileDepth: Int = 0,
          accessible: Bool = true,
          tileHeight: TileHeight = .fullHeight,
-         tileInformation: [String] = []){
+         tileInformation: [String] = [],
+         sound: String = "trash"){
 
         isAccessible = accessible
         information = tileInformation
+        soundID = sound
+
 
         super.init(texture: SKTexture.init(imageNamed: spriteName),
                    color: UIColor.clear,
@@ -40,10 +44,13 @@ class SKTileNode: SKTileableNode{
          tileDepth: Int = 0,
          accessible: Bool = true,
          tileHeight: TileHeight = .fullHeight,
-         tileInformation: [String] = []){
+         tileInformation: [String] = [],
+         sound: String = "trash"){
 
         isAccessible = accessible
         information = tileInformation
+        soundID = sound
+
 
 
         super.init(texture: spriteTexture,
@@ -60,10 +67,12 @@ class SKTileNode: SKTileableNode{
          tileDepth: Int = 0,
          accessible: Bool = true,
          tileHeight: TileHeight = .fullHeight,
-         tileInformation: [String] = []){
+         tileInformation: [String] = [],
+         sound: String = "trash"){
 
         isAccessible = accessible
         information = tileInformation
+        soundID = sound
 
         super.init(texture: nil,
                    color: color,

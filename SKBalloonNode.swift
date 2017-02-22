@@ -71,6 +71,11 @@ class SKBalloonNode: SKSpriteNode{
         
         label.isOpaque = false
         
+        #if os(tvOS)
+            label.font = UIFont.systemFont(ofSize: 20)
+        #endif
+
+        
         label.text = text
         label.textColor = UIColor.white
         label.lineBreakMode = .byWordWrapping
@@ -91,6 +96,7 @@ class SKBalloonNode: SKSpriteNode{
         childNode.name = "textNode"
         childNode.zPosition = 103
         childNode.alpha = 0
+        
         
         let fadeOutAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
         let fadeInAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
@@ -160,7 +166,7 @@ class SKBalloonNode: SKSpriteNode{
     
     fileprivate func time(for text: String) -> Double{
         
-        //0.6 seconds per word is a healthy median.
+        //1 second per word is a healthy median, according to Max.
         
         let time = 0.1 * Double(text.characters.count)
     

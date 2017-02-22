@@ -274,6 +274,11 @@ class IsometricGameScene: SKScene{
             } else if let unwrappedNearby = nearbyTile as? SKTileNode{
                 if let balloon = self.balloonNode{
                     balloon.show(for: unwrappedNearby.information)
+                    
+                    if let sound = AudioManager.SoundType(rawValue: unwrappedNearby.soundID){
+                        AudioManager.shared.play(sound: sound)
+                    }
+                    
                 }
             }
             
