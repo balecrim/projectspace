@@ -41,6 +41,7 @@
 		A3AB39C91E5D52A700320DEE /* EngineAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3AB39C81E5D52A700320DEE /* EngineAssets.xcassets */; };
 		A3AB39CB1E5D54B300320DEE /* UIView+toImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB39CA1E5D54B300320DEE /* UIView+toImage.swift */; };
 		A3AB39CC1E5D54B300320DEE /* UIView+toImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB39CA1E5D54B300320DEE /* UIView+toImage.swift */; };
+		A3AB39CD1E5D658C00320DEE /* EngineAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3AB39C81E5D52A700320DEE /* EngineAssets.xcassets */; };
 		A3CD08451E5C9FBF000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
 		A3CD08461E5C9FF5000A0F2C /* BaseGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD08441E5C9FBF000A0F2C /* BaseGameScene.swift */; };
 		A3E4EDB51E48D9C200DBE129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4EDB41E48D9C200DBE129 /* AppDelegate.swift */; };
@@ -562,6 +563,7 @@
 				A32BB7371E55F84F00971762 /* Main.storyboard in Resources */,
 				A32BB76C1E55F98D00971762 /* sprites.atlas in Resources */,
 				A32BB76E1E55F99000971762 /* Game.xcassets in Resources */,
+				A3AB39CD1E5D658C00320DEE /* EngineAssets.xcassets in Resources */,
 				A32BB7701E55FB8A00971762 /* Assets.xcassets in Resources */,
 				A32AB0291E5B766800C1EB0E /* Assets.xcassets in Resources */,
 				A32BB73C1E55F84F00971762 /* LaunchScreen.storyboard in Resources */,

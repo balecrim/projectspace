@@ -13,7 +13,7 @@ extension UIView {
     public func toImage() -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()

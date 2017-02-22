@@ -79,6 +79,13 @@ class RoomScene: BaseGameScene {
         character?.zPosition = 100
         door.zPosition = 101
         
+        let balloonNode = SKBalloonNode.init(text: "", color: nil)
+        balloonNode.position = CGPoint.zero
+        self.addChild(balloonNode)
+        balloonNode.zPosition = 102
+        
+        balloonNode.show(for: ["Hey, this works again!", "Now, we should reimplement the movement + sync with character."])
+        
     }
 
 

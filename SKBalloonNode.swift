@@ -19,7 +19,7 @@ import SpriteKit
 class SKBalloonNode: SKSpriteNode{
     
     static let defaultTexture = SKTexture.init(imageNamed: "balloon")
-    static let offset = CGSize(width: 20, height: 30)
+    static let offset = CGSize(width: 10, height: 30)
     
     var textStorage: String = ""
     var textQueue: [String] = []
@@ -42,15 +42,7 @@ class SKBalloonNode: SKSpriteNode{
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        let childNode = buildTextNode(for: text,
-                                      with: CGSize(width: self.size.width - SKBalloonNode.offset.width,
-                                                   height: self.size.height - SKBalloonNode.offset.height))
-
-        childNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        childNode.position = CGPoint(x: 0, y: 30)
-        childNode.name = "textNode"
-
-        self.addChild(childNode)
+        self.text = text
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,7 +51,7 @@ class SKBalloonNode: SKSpriteNode{
     
     fileprivate func buildTextNode(for text: String, with size: CGSize) -> SKSpriteNode{
         let textImage = generateImage(for: text,
-                                      frame: CGRect.init(x:0 , y:0,
+                                      frame: CGRect.init(x:0, y:0,
                                                          width:size.width,
                                                          height:size.height))
         
@@ -70,16 +62,19 @@ class SKBalloonNode: SKSpriteNode{
                                      color: .clear,
                                      size: childTexture.size())
         
+        
         return node
     }
     
     private func generateImage(for text: String, frame: CGRect) -> UIImage{
         let label = UILabel.init(frame: frame)
         
+        label.isOpaque = false
+        
         label.text = text
         label.textColor = UIColor.white
         label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 4
+        label.numberOfLines = 3
         label.textAlignment = .center
 
         return label.toImage()
@@ -94,10 +89,11 @@ class SKBalloonNode: SKSpriteNode{
         childNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         childNode.position = CGPoint(x: 0, y: 30)
         childNode.name = "textNode"
+        childNode.zPosition = 103
         childNode.alpha = 0
         
-        let fadeOutAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
-        let fadeInAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
+        let fadeOutAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
+        let fadeInAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
         
         if let oldNode = self.childNode(withName: "textNode"){
             DispatchQueue.main.async {
@@ -115,7 +111,7 @@ class SKBalloonNode: SKSpriteNode{
         }
 
     }
-        
+    
     func show(for sequence: [String]){
         if let currentString = sequence.first{
             appear()
@@ -138,9 +134,9 @@ class SKBalloonNode: SKSpriteNode{
         
     }
     
-    func appear(){
+    fileprivate func appear(){
         if alpha != 1{
-            let fadeInAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
+            let fadeInAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
             
             DispatchQueue.main.async {
                 self.run(fadeInAction)
@@ -148,9 +144,9 @@ class SKBalloonNode: SKSpriteNode{
         }
     }
     
-    func disappear(){
+    fileprivate func disappear(){
         if alpha != 0{
-            let fadeOutAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
+            let fadeOutAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
             
             DispatchQueue.main.async {
                 self.run(fadeOutAction)
@@ -164,7 +160,7 @@ class SKBalloonNode: SKSpriteNode{
         
         //0.6 seconds per word is a healthy median.
         
-        return 0.6 * Double(text.components(separatedBy: " ").count)
+        return 0.8 * Double(text.components(separatedBy: " ").count)
     }
     
 }
