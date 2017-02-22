@@ -12,7 +12,6 @@ import UIKit
 
 class BaseGameScene: IsometricGameScene{
     
-    var character: SKCharacterNode?
     var cam: SKCameraNode!
     
     override init(size: CGSize) {

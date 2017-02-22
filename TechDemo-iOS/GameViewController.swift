@@ -55,7 +55,7 @@ class GameViewController: UIViewController {
     
     @IBAction func selectPressed() {
         if let gScene = (self.view as? SKView)?.scene as? BaseGameScene{
-            if let character = gScene.character{
+            if let character = gScene.characterNode{
                 gScene.characterSelect(near: character)
             }
         }
@@ -95,7 +95,7 @@ class GameViewController: UIViewController {
     func move(on direction: MovementDirection){
         DispatchQueue.main.async {
             if let gScene = (self.view as? SKView)?.scene as? BaseGameScene{
-                if let character = gScene.character{
+                if let character = gScene.characterNode{
                     gScene.move(character: character, on: direction)
                 }
             }

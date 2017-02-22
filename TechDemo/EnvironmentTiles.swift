@@ -61,7 +61,17 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "log_hall",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation:["Okay, this has some better credentials to the network.",
+                                                    "Let me see what I can find.",
+                                                    "...",
+                                                    "That emergency is apparently a REACTOR FAILURE!",
+                                                    "Evacuation protocols have been initiated.",
+                                                    "It seems I'm the last one here!",
+                                                    "Hmm, how are the propulsors still running?",
+                                                    "THEY'RE NOT.",
+                                                    "I need to get to the reactor room ASAP!",
+                                                    "The emergency door at the end of the hallway should get me there."])
         }
     }
     
@@ -70,7 +80,8 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "dorm1",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation: ["This old room is also locked out."])
         }
     }
     
@@ -79,7 +90,8 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "dorm2",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation: ["Julie's room is also locked."])
         }
     }
     
@@ -88,7 +100,10 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "dorm3",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation: ["Wait, I can't get back into my room!",
+                                                     "I forgot my pocket protector and pen.",
+                                                     "Darn."])
         }
     }
     
@@ -97,7 +112,8 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "exitDoor",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation: ["I think i need something to hold that button."])
         }
     }
     

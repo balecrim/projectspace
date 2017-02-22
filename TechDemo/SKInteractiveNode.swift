@@ -255,12 +255,8 @@ class SKInteractiveNode: SKTileNode{
 
     func hoverOffset() -> CGFloat{
 
-        if let childNode = self.childNode{
-            return (SKInteractiveNode.baseSize.height / 2) - childNode.size.height
-        } else {
-            return 42
-        }
-
+        return 12
+        
     }
 
 

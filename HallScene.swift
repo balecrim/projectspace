@@ -13,7 +13,7 @@ class HallScene: BaseGameScene {
     
     override func didMove(to view: SKView) {
         
-        character = SKCharacterNode.defaultChar
+        characterNode = SKCharacterNode.defaultChar
         
         let buttonTextures: [SKInteractiveNode.TileState: SKTexture] =
             [.inactive: SKTexture.init(imageNamed: "button"),
@@ -57,7 +57,7 @@ class HallScene: BaseGameScene {
                     [.wall_hall, .air, .air, .air],
                     [.wall_alarm, .air, .air, .air],
                     [.wall_hall, .air, .air, .air],
-                    [.dorm3, .papers, .air, .air],
+                    [.dorm3, .air, .air, .air],
                     [.wall_hall, .air, .air, .air],
                     [.wall_alarm, .trash, .air, .air],
                     [.wall_hall, .air, .air, .air],
@@ -78,8 +78,28 @@ class HallScene: BaseGameScene {
 
         
         scene?.addChild(cam)
-        placeIsometricTile(tile: character!, atPosition: CGPoint(x: 1, y:1), onLayer: 1)
-        character?.zPosition = 100        
+        placeIsometricTile(tile: characterNode!, atPosition: CGPoint(x: 1, y:3), onLayer: 1)
+        characterNode?.currentDirection = .right
+        characterNode!.zPosition = 100
+        
+        balloonNode = SKBalloonNode.init(text: "", color: nil)
+        
+
+        if let character = self.characterNode{
+            if let balloon = self.balloonNode{
+                
+                let balPosition = CGPoint(x: character.position.x + (balloon.size.width * 0.8),
+                                          y: character.position.y + (balloon.size.height * 1.25))
+                
+                balloon.position = balPosition
+                self.addChild(balloon)
+                balloon.zPosition = 102
+                balloon.show(for: ["I need to get to the log viewer down the hall",
+                                   "That will give me a better chance to figure out what's going on."])
+            }
+
+        }
+        
     }
     
     

@@ -22,6 +22,7 @@ class IsometricGameScene: SKScene{
     
     var nextCameraPosition: CGPoint?
     var balloonNode: SKBalloonNode?
+    var characterNode: SKCharacterNode?
 
     // MARK: Initializers
 
@@ -172,17 +173,53 @@ class IsometricGameScene: SKScene{
 
             }
             
-            ///Phase 3: if there's an accessible tile in front of it, actually move character...
-            if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
+            //FIXME: HACK HACK HACK
+            //Reimplement this in a sane way.
+            
+            if self.activeTiles.count > 0{
+                if let activeTile = self.activeTiles.first{
+                    self.nextCameraPosition = activeTile.position
+                    
+                    if let destination = self.getTileForPosition(at: activeTile.neighbourPosition(for: direction)) as? SKTileNode{
+                        if (destination.isAccessible){
+                            
+                            print("Moving active tile...")
+                            
+                            let originalPosition = activeTile.gridPosition
+                            let destinationPosition = destination.gridPosition
+                            print("original:", originalPosition, " destination:", destinationPosition, "direction:", direction)
+                            
+                            
+                            let destinationPoint = self.calculatePoint(for: activeTile, atPosition: CGPoint(x: destinationPosition.x, y: destinationPosition.y), onLayer: destinationPosition.z)
+                            
+                            let movementAction = SKAction.move(to: destinationPoint, duration: 0.25)
+
+                            activeTile.run(movementAction, completion: {
+                                activeTile.gridPosition = destinationPosition
+                                (self.getTileForPosition(at: destinationPosition) as? SKTileNode)?.gridPosition = originalPosition
+
+                                self.tileSwap(positionOne: originalPosition, positionTwo: destinationPosition)
+                                self.nextCameraPosition = activeTile.position
+                            })
+                        
+                        }
+                    }
+
+                    
+                }
+            } else{
+                
+                ///Phase 3: if there's an accessible tile in front of it, actually move character...
+                if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
                     if (destination.isAccessible){
-                       
+                        
                         //storing positions
                         let originalPosition = character.gridPosition
                         let destinationPosition = destination.gridPosition
                         
                         print("original:", originalPosition, " destination:", destinationPosition, "direction:", direction)
                         character.gridPosition = destinationPosition
-
+                        
                         //moving character in the scene
                         DispatchQueue.main.async {
                             
@@ -197,7 +234,7 @@ class IsometricGameScene: SKScene{
                             if let balloon = self.balloonNode{
                                 let newBalloonPos = CGPoint(x: destinationPoint.x + (balloon.size.width * 0.8),
                                                             y: destinationPoint.y + (balloon.size.height * 1.25))
-
+                                
                                 let balloonAction = SKAction.move(to: newBalloonPos, duration: 0.4)
                                 
                                 balloon.run(balloonAction)
@@ -205,6 +242,7 @@ class IsometricGameScene: SKScene{
                             
                             self.nextCameraPosition = destinationPoint
                             
+                        }
                     }
                 }
             }
@@ -224,8 +262,15 @@ class IsometricGameScene: SKScene{
             //otherwise, select something.
             let nearbyTile = self.getTileForPosition(at: tile.neighbourPosition(for: tile.currentDirection))
             if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
-                nearbyInteractive.activate()
-                self.activeTiles.append(nearbyInteractive)
+                if nearbyInteractive.interactionType == .transportable{
+                    nearbyInteractive.activate()
+                    nextCameraPosition = nearbyInteractive.position
+                    self.activeTiles.append(nearbyInteractive)
+                } else if let unwrappedNearby = nearbyTile as? SKTileNode{
+                    if let balloon = self.balloonNode{
+                        balloon.show(for: unwrappedNearby.information)
+                    }
+                }
             } else if let unwrappedNearby = nearbyTile as? SKTileNode{
                 if let balloon = self.balloonNode{
                     balloon.show(for: unwrappedNearby.information)
@@ -233,6 +278,17 @@ class IsometricGameScene: SKScene{
             }
             
         }
+    }
+    
+    func tileSwap(positionOne: (x: Int, y: Int, z:Int), positionTwo: (x: Int, y: Int, z:Int)){
+        
+        let temp = getTileForPosition(at: positionTwo)!
+
+        DispatchQueue.main.async {
+            self.tileSet[positionTwo.z][positionTwo.y][positionTwo.x] = self.getTileForPosition(at: positionOne)!
+            self.tileSet[positionOne.z][positionOne.y][positionOne.x] = temp
+        }
+        
     }
         
     override func update(_ currentTime: TimeInterval) {

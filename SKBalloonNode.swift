@@ -162,7 +162,14 @@ class SKBalloonNode: SKSpriteNode{
         
         //0.6 seconds per word is a healthy median.
         
-        return 0.8 * Double(text.components(separatedBy: " ").count)
+        let time = 0.1 * Double(text.characters.count)
+    
+        if time < 3{
+            return 3
+        } else {
+            return time
+        }
+        
     }
     
 }
