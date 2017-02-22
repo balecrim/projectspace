@@ -149,7 +149,9 @@ class SKBalloonNode: SKSpriteNode{
             let fadeOutAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
             
             DispatchQueue.main.async {
-                self.run(fadeOutAction)
+                self.run(fadeOutAction, completion: { 
+                    self.text = ""
+                })
             }
         }
     }

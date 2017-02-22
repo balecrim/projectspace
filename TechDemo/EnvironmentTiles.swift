@@ -165,7 +165,10 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "isolog",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation:["Wait a second...",
+                                                    "There's a bunch of mail here about an \"emergency\"",
+                                                    "What IS going on in here?"])
             
         }
     }
@@ -175,7 +178,10 @@ extension SKTileableNode{
             return SKTileNode.init(spriteName: "isoshelf",
                                    tileDepth: 0,
                                    accessible: false,
-                                   tileHeight: .doubleHeight)
+                                   tileHeight: .doubleHeight,
+                                   tileInformation:["\"Art of War\", \"The Martian\", \"Twilight\" "
+                                                    + "and a bunch of random programming manuals.",
+                                                    "My book collection sure is odd."])
             
         }
     }

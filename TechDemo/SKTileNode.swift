@@ -14,6 +14,7 @@ class SKTileNode: SKTileableNode{
     static var baseSize: CGSize = CGSize(width: 128, height: 128)
 
     var isAccessible: Bool = true
+    var information: [String] = []
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,9 +23,11 @@ class SKTileNode: SKTileableNode{
     init(spriteName: String = "iso_ground",
          tileDepth: Int = 0,
          accessible: Bool = true,
-         tileHeight: TileHeight = .fullHeight){
+         tileHeight: TileHeight = .fullHeight,
+         tileInformation: [String] = []){
 
         isAccessible = accessible
+        information = tileInformation
 
         super.init(texture: SKTexture.init(imageNamed: spriteName),
                    color: UIColor.clear,
@@ -36,9 +39,12 @@ class SKTileNode: SKTileableNode{
     init(spriteTexture: SKTexture? = SKTexture.init(imageNamed: "iso_ground"),
          tileDepth: Int = 0,
          accessible: Bool = true,
-         tileHeight: TileHeight = .fullHeight){
+         tileHeight: TileHeight = .fullHeight,
+         tileInformation: [String] = []){
 
         isAccessible = accessible
+        information = tileInformation
+
 
         super.init(texture: spriteTexture,
                    color: UIColor.clear,
@@ -53,9 +59,11 @@ class SKTileNode: SKTileableNode{
     init(color: UIColor = UIColor.clear,
          tileDepth: Int = 0,
          accessible: Bool = true,
-         tileHeight: TileHeight = .fullHeight){
+         tileHeight: TileHeight = .fullHeight,
+         tileInformation: [String] = []){
 
         isAccessible = accessible
+        information = tileInformation
 
         super.init(texture: nil,
                    color: color,

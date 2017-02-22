@@ -174,7 +174,6 @@ class IsometricGameScene: SKScene{
             
             ///Phase 3: if there's an accessible tile in front of it, actually move character...
             if let destination = self.getTileForPosition(at: character.neighbourPosition(for: direction)) as? SKTileNode{
-                    //print(destination.isAccessible)
                     if (destination.isAccessible){
                        
                         //storing positions
@@ -227,6 +226,10 @@ class IsometricGameScene: SKScene{
             if let nearbyInteractive = nearbyTile as? SKInteractiveNode{
                 nearbyInteractive.activate()
                 self.activeTiles.append(nearbyInteractive)
+            } else if let unwrappedNearby = nearbyTile as? SKTileNode{
+                if let balloon = self.balloonNode{
+                    balloon.show(for: unwrappedNearby.information)
+                }
             }
             
         }

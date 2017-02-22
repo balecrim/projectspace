@@ -92,8 +92,10 @@ class RoomScene: BaseGameScene {
                 balloon.position = balPosition
                 self.addChild(balloon)
                 balloon.zPosition = 102
-                balloon.show(for: ["Hey, this works again!",
-                                   "Now, we should reimplement the movement + sync with character."])
+                balloon.show(for: ["Well, I'm up.",
+                                   "Something is weird though.",
+                                   "It's so silent!",
+                                   "I should go talk to the crew and find out what's going on."])
             }
 
         }
