@@ -16,6 +16,7 @@ class RoomScene: BaseGameScene {
     override func didMove(to view: SKView) {
         
         character = SKCharacterNode.defaultChar
+        character?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         let buttonTextures: [SKInteractiveNode.TileState: SKTexture] =
             [.inactive: SKTexture.init(imageNamed: "button"),
@@ -75,16 +76,30 @@ class RoomScene: BaseGameScene {
         
         scene?.addChild(cam)
         
-        placeIsometricTile(tile: character!, atPosition: CGPoint(x: 2, y:1), onLayer: 1)
+        placeIsometricTile(tile: character!, atPosition: CGPoint(x: 1, y:1), onLayer: 1)
         character?.zPosition = 100
         door.zPosition = 101
         
-        let balloonNode = SKBalloonNode.init(text: "", color: nil)
-        balloonNode.position = CGPoint.zero
-        self.addChild(balloonNode)
-        balloonNode.zPosition = 102
+        if let character = self.character{
+            
+            balloonNode = SKBalloonNode.init(text: "", color: nil)
+            
+            if let balloon = self.balloonNode{
+                
+                let balPosition = CGPoint(x: character.position.x + (balloon.size.width * 0.8),
+                                          y: character.position.y + (balloon.size.height * 1.25))
+
+                balloon.position = balPosition
+                self.addChild(balloon)
+                balloon.zPosition = 102
+                balloon.show(for: ["Hey, this works again!",
+                                   "Now, we should reimplement the movement + sync with character."])
+            }
+
+        }
         
-        balloonNode.show(for: ["Hey, this works again!", "Now, we should reimplement the movement + sync with character."])
+        
+        
         
     }
 

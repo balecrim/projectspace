@@ -21,7 +21,7 @@ class IsometricGameScene: SKScene{
     var activeTiles: [SKInteractiveNode] = []
     
     var nextCameraPosition: CGPoint?
-    
+    var balloonNode: SKBalloonNode?
 
     // MARK: Initializers
 
@@ -194,6 +194,15 @@ class IsometricGameScene: SKScene{
                             
                             let movementAction = SKAction.move(to: destinationPoint, duration: 0.25)
                             character.run(movementAction)
+                            
+                            if let balloon = self.balloonNode{
+                                let newBalloonPos = CGPoint(x: destinationPoint.x + (balloon.size.width * 0.8),
+                                                            y: destinationPoint.y + (balloon.size.height * 1.25))
+
+                                let balloonAction = SKAction.move(to: newBalloonPos, duration: 0.4)
+                                
+                                balloon.run(balloonAction)
+                            }
                             
                             self.nextCameraPosition = destinationPoint
                             
