@@ -19,13 +19,16 @@ import SpriteKit
 class SKBalloonNode: SKSpriteNode{
     
     static let defaultTexture = SKTexture.init(imageNamed: "balloon")
+    static let offset = CGSize(width: 20, height: 30)
     
     var textStorage: String = ""
+    var textQueue: [String] = []
     
     var text: String{
         get{ return textStorage }
         set{
             self.textStorage = newValue
+            updateText(with: newValue)
         }
     }
 
@@ -39,14 +42,38 @@ class SKBalloonNode: SKSpriteNode{
         
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        
+        let childNode = buildTextNode(for: text,
+                                      with: CGSize(width: self.size.width - SKBalloonNode.offset.width,
+                                                   height: self.size.height - SKBalloonNode.offset.height))
+
+        childNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        childNode.position = CGPoint(x: 0, y: 30)
+        childNode.name = "textNode"
+
+        self.addChild(childNode)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func generateImage(for text: String, frame: CGRect) -> UIImage{
+    fileprivate func buildTextNode(for text: String, with size: CGSize) -> SKSpriteNode{
+        let textImage = generateImage(for: text,
+                                      frame: CGRect.init(x:0 , y:0,
+                                                         width:size.width,
+                                                         height:size.height))
+        
+        let childTexture = SKTexture.init(image: textImage)
+        
+        
+        let node = SKSpriteNode.init(texture: childTexture,
+                                     color: .clear,
+                                     size: childTexture.size())
+        
+        return node
+    }
+    
+    private func generateImage(for text: String, frame: CGRect) -> UIImage{
         let label = UILabel.init(frame: frame)
         
         label.text = text
@@ -57,8 +84,83 @@ class SKBalloonNode: SKSpriteNode{
 
         return label.toImage()
     }
+
+    fileprivate func updateText(with text: String){
+
+        let childNode = buildTextNode(for: text,
+                                      with: CGSize(width: self.size.width - SKBalloonNode.offset.width,
+                                                   height: self.size.height - SKBalloonNode.offset.height))
+        
+        childNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        childNode.position = CGPoint(x: 0, y: 30)
+        childNode.name = "textNode"
+        childNode.alpha = 0
+        
+        let fadeOutAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
+        let fadeInAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
+        
+        if let oldNode = self.childNode(withName: "textNode"){
+            DispatchQueue.main.async {
+                oldNode.run(fadeOutAction, completion: {_ in
+                    oldNode.removeFromParent()
+                    self.addChild(childNode)
+                    childNode.run(fadeInAction)
+                })
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.addChild(childNode)
+                childNode.run(fadeInAction)
+            }
+        }
+
+    }
+        
+    func show(for sequence: [String]){
+        if let currentString = sequence.first{
+            appear()
+            
+            DispatchQueue.main.async {
+                self.text = currentString
+                
+                DispatchQueue.global()
+                    .asyncAfter(deadline: DispatchTime.now() + self.time(for: currentString),
+                                execute: {
+                                    let newSequence = Array(sequence.dropFirst())
+                                    self.show(for: newSequence)
+                    })
+            }
+
+        } else{
+            disappear()
+        }
+        
+        
+    }
     
-    func time(for text: String) -> Double{
+    func appear(){
+        if alpha != 1{
+            let fadeInAction = SKAction.fadeAlpha(to: 0, duration: 0.15)
+            
+            DispatchQueue.main.async {
+                self.run(fadeInAction)
+            }
+        }
+    }
+    
+    func disappear(){
+        if alpha != 0{
+            let fadeOutAction = SKAction.fadeAlpha(to: 1, duration: 0.15)
+            
+            DispatchQueue.main.async {
+                self.run(fadeOutAction)
+            }
+        }
+    }
+
+    
+    
+    fileprivate func time(for text: String) -> Double{
         
         //0.6 seconds per word is a healthy median.
         
