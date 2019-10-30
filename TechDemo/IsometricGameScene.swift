@@ -255,7 +255,7 @@ class IsometricGameScene: SKScene{
         if activeTiles.count > 0{
             for tile in activeTiles{
                 tile.deactivate()
-                activeTiles.remove(at: self.activeTiles.index(of: tile)!)
+                activeTiles.remove(at: self.activeTiles.firstIndex(of: tile)!)
                 
             }
         } else {

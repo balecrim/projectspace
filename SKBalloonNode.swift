@@ -103,7 +103,7 @@ class SKBalloonNode: SKSpriteNode{
         
         if let oldNode = self.childNode(withName: "textNode"){
             DispatchQueue.main.async {
-                oldNode.run(fadeOutAction, completion: {_ in
+                oldNode.run(fadeOutAction, completion: {
                     oldNode.removeFromParent()
                     self.addChild(childNode)
                     childNode.run(fadeInAction)
@@ -168,7 +168,7 @@ class SKBalloonNode: SKSpriteNode{
         
         //1 second per word is a healthy median, according to Max.
         
-        let time = 0.1 * Double(text.characters.count)
+        let time = 0.1 * Double(text.count)
     
         if time < 3{
             return 3

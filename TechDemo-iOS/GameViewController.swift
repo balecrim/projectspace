@@ -19,24 +19,24 @@ class GameViewController: UIViewController {
     #endif
     
     // Press Type
-    func addGestureRecognizerWithType(_ pressType : UIPressType, selector : Selector) {
+    func addGestureRecognizerWithType(_ pressType : UIPress.PressType, selector : Selector) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: selector)
         tapGestureRecognizer.allowedPressTypes = [NSNumber(value: pressType.rawValue as Int)];
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     // Swipes
-    func addSwipeGestureRecognizerWithType(_ direction : UISwipeGestureRecognizerDirection, selector : Selector) {
+    func addSwipeGestureRecognizerWithType(_ direction : UISwipeGestureRecognizer.Direction, selector : Selector) {
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: selector)
         swipeGestureRecognizer.direction = direction
         view.addGestureRecognizer(swipeGestureRecognizer)
     }
     
     func eventoKeyboard(){
-        addGestureRecognizerWithType(UIPressType.upArrow, selector: #selector(self.up))
-        addGestureRecognizerWithType(UIPressType.downArrow, selector: #selector(self.down))
-        addGestureRecognizerWithType(UIPressType.leftArrow, selector: #selector(self.left))
-        addGestureRecognizerWithType(UIPressType.rightArrow, selector: #selector(self.right))
+        addGestureRecognizerWithType(UIPress.PressType.upArrow, selector: #selector(self.up))
+        addGestureRecognizerWithType(UIPress.PressType.downArrow, selector: #selector(self.down))
+        addGestureRecognizerWithType(UIPress.PressType.leftArrow, selector: #selector(self.left))
+        addGestureRecognizerWithType(UIPress.PressType.rightArrow, selector: #selector(self.right))
     }
     
     func eventoSwipes(){
@@ -47,9 +47,9 @@ class GameViewController: UIViewController {
     }
     
     func eventoPress(){
-        addGestureRecognizerWithType(UIPressType.select, selector: #selector(self.selectButton))
-        addGestureRecognizerWithType(UIPressType.menu, selector: #selector(self.menu))
-        addGestureRecognizerWithType(UIPressType.playPause, selector: #selector(self.playPause))
+        addGestureRecognizerWithType(UIPress.PressType.select, selector: #selector(self.selectButton))
+        addGestureRecognizerWithType(UIPress.PressType.menu, selector: #selector(self.menu))
+        addGestureRecognizerWithType(UIPress.PressType.playPause, selector: #selector(self.playPause))
         
     }
     
@@ -67,16 +67,16 @@ class GameViewController: UIViewController {
         selectPressed()
     }
     
-    func playPause(){
+    @objc func playPause(){
         print("play")
     }
     
-    func menu(){
+    @objc func menu(){
         print("menu")
     }
 
     
-    @IBAction func up(){
+    @objc @IBAction func up(){
         move(on: .up)
     }
     

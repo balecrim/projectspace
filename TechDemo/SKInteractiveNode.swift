@@ -55,8 +55,8 @@ class SKInteractiveNode: SKTileNode{
          tileDepth: Int = 0,
          tileHeight: TileHeight = .fullHeight,
          interactionType: InteractionType = .transportable,
-         activateAction: @escaping (() -> ()) = {_ in},
-         deactivateAction: @escaping (() -> ()) = {_ in}){
+         activateAction: @escaping (() -> ()) = {},
+         deactivateAction: @escaping (() -> ()) = {}){
         
 
         self.textureStorage = textures
